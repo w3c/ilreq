@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Indic Layout Requirements</title>
+    <meta charset="utf-8">
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common'
+            async class='remove'></script>
+    <style type="text/css">
+@import url(http://fonts.googleapis.com/earlyaccess/notosansdevanagari.css);
+
+del { display: block; color: #ccc; }
+
+:lang(hi) {
+	font-family:"Devanagari MT", "Kokila", "Noto Sans Devanagari", "Devanagari Sangam MN", Mangal, sans-serif;
+}
+.TableGen {
+	margin:0px;
+	padding:0px;
+	width:70%;
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #000000;
+}
+.TableGen table {
+	width:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+}
+.TableGen tr:nth-child(odd) {
+	background-color:#BBDDFF;
+}
+.TableGen tr:nth-child(even) {
+	background-color:#ffffff;
+}
+.TableGen td {
+	vertical-align:middle;
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+	text-align:left;
+	font-size:18px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	color:#000000;
+}
+.TableGen tr:last-child td {
+	border-width:0px 1px 0px 0px;
+}
+.TableGen tr td:last-child {
+	border-width:0px 0px 1px 0px;
+}
+.TableGen tr:last-child td:last-child {
+	border-width:0px 0px 0px 0px;
+}
+.TableGen tr:first-child td {
+	background-color:#0080C0;
+	border:0px solid #000000;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:18px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#ffffff;
+}
+.TableGen tr:first-child:hover td {
+	background-color:#0080C0;
+}
+.TableGen tr:first-child td:first-child {
+	border-width:0px 0px 1px 0px;
+}
+.TableGen tr:first-child td:last-child {
+	border-width:0px 0px 1px 1px;
+}
+.tab-format1 table {
+	border:1px solid #000000;
+	border-width:1px 1px 1px 1px;
+	padding:2px;
+}
+.tab-format1 td {
+	vertical-align:middle;
+	border:1px solid #000000;
+	border-width:1px 1px 1px 1px;
+	text-align:left;
+	padding:5px;
+}
+em.rfc2119 {
+	text-transform:     lowercase;
+	font-variant:       small-caps;
+	font-style:         normal;
+	color:              #900;
+}
+h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym, h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+	border: none;
+}
+dfn {
+	font-weight:    bold;
+}
+a.internalDFN {
+	color:  inherit;
+	border-bottom:  1px solid #99c;
+	text-decoration:    none;
+}
+a.externalDFN {
+	color:  inherit;
+	border-bottom:  1px dotted #ccc;
+	text-decoration:    none;
+}
+a.bibref {
+	text-decoration:    none;
+}
+cite .bibref {
+	font-style: normal;
+}
+code {
+	color:  #C83500;
+}
+/* --- TOC --- */
+.toc a, .tof a {
+	text-decoration:    none;
+}
+a .secno, a .figno {
+	color:  #000;
+}
+ul.tof, ol.tof {
+	list-style: none outside none;
+}
+.caption {
+	margin-top: 0.5em;
+	font-style:   italic;
+}
+/* --- TABLE --- */
+table.simple {
+	border-spacing: 0;
+	border-collapse:    collapse;
+	border-bottom:  3px solid #005a9c;
+}
+.simple th {
+	background: #005a9c;
+	color:  #fff;
+	padding:    3px 5px;
+	text-align: left;
+}
+.simple th[scope="row"] {
+	background: inherit;
+	color:  inherit;
+	border-top: 1px solid #ddd;
+}
+.simple td {
+	padding:    3px 10px;
+	border-top: 1px solid #ddd;
+}
+.simple tr:nth-child(even) {
+	background: #f0f6ff;
+}
+/* --- DL --- */
+.section dd > p:first-child {
+	margin-top: 0;
+}
+.section dd > p:last-child {
+	margin-bottom: 0;
+}
+.section dd {
+	margin-bottom:  1em;
+}
+.section dl.attrs dd, .section dl.eldef dd {
+	margin-bottom:  0;
+}
+ @media print {
+.removeOnSave {
+	display: none;
+}
+}
+</style>
+    <script class="remove">
+      var respecConfig = {
+          // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
+          specStatus:           "ED",
+          noRecTrack:           true,
+          
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "ilreq",
+
+          // if your specification has a subtitle that goes below the main
+          // formal title, define it here
+          // subtitle   :  "an excellent document",
+
+          // if you wish the publication date to be other than the last modification, set this
+          //publishDate:  "2014-12-16",
+
+          // if the specification's copyright date is a range of years, specify
+          // the start date here:
+          // copyrightStart: "2005"
+
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          // previousPublishDate:  "1977-03-15",
+          // previousMaturity:  "WD",
+
+          // if there a publicly available Editor's Draft, this is the link
+          edDraftURI:   "http://www.w3.org/International/docs/indic-layout/",
+
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+              {
+                  name:       "Swaran Lata"
+               ,   mailto:     "slata@deity.gov.in"
+              ,   company:    "DeitY"
+              
+              },
+			                {
+                  name:       "Somnath Chandra"
+              ,   mailto:     "schandra@deity.gov.in"
+              ,   company:    "DeitY"
+              
+              },
+			  
+			              {
+                  name:       "Prashant Verma"
+              ,   mailto:     "vermaprashant1@gmail.com"
+              ,   company:    "Web Standardization Initiative, DeitY"
+              
+              }
+			  
+			     ],
+         
+
+          // name of the WG
+          wg:           "Internationalization Working Group",
+          
+          // URI of the public WG page
+          wgURI:         "http://www.w3.org/International/core/",
+          
+          // name (without the @w3c.org) of the public mailing to which comments are due
+          wgPublicList: "public-i18n-indic",
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/32113/status",
+          // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
+		   localBiblio: {
+		"Code-Charts": {
+		    title: "Unicode Code Charts",
+			href: "http://www.unicode.org/charts/",
+			
+		},
+		"Evolution-of-Indic-Scripts": {
+		    title: "Indic Scripts",
+			href: "http://www.ciillibrary.org/Sites/Photography/PhotographyHome.html",
+			
+		},
+		"CLDR": {
+		    title: "Unicode CLDR",
+			href: "http://cldr.unicode.org",
+			
+		},
+		"South-Asian-Scripts": {
+		    title: "Unicode Technical note#10 : South Asian Scripts",
+			href: "http://www.unicode.org/notes/tn10/",
+			
+		},
+	
+		"UAX29": {
+		    title: "Grapheme Cluster boundaries",
+			href: "http://www.unicode.org/reports/tr29/",
+			
+		},
+		"UAX14": {
+		    title: "Unicode Line Breaking Algorithm",
+			href: "http://www.unicode.org/reports/tr14/",
+			
+		},
+
+		"Normalization": {
+		    title: "Unicode Normalization",
+			href: "http://unicode.org/reports/tr15/",
+			
+		},
+		"Draft-Script-Grammar": {
+		    title: "Draft-Scrip-Grammer Devanagari",
+			href: "http://tdil-dc.in/index.php?option=com_vertical&task=view-article&article_id=149&lang=en",
+			
+		}
+		
+
+						}
+      };
+    </script>
+    </head>
+    <body id="respecDocument" role="document" class="h-entry">
+<section id='abstract'>
+      <p>This document describes the basic requirements for Indian Languages layout for display purpose. It discusses some of the major layout requirements in first letter pseudo-element, vertical arrangements of characters, letter spacing, text segmentation, line breaking and collation rules in Indic languages. </p>
+      <p>The minimal requirements presented in this document for  Indian languages text layout will also be used in E-publishing and CSS Standard. This documents covers major issues of e-content in Indian languages in order to  create standardize format of text layout to address storage, rendering  problems, vertical writing, letter spacing, collation, line breaking etc.</p>
+      <p>It also describes the definition of ABNF(Augmented Backus–Naur Form)
+    based valid segmentation-Indic syllable in order to get the proper display in the browsers. The text segmentation[[!UAX29]] and line breaking  [[!UAX14]] algorithms are considered in detail. The CSS & digital publications standards will benefit from this document. 
+  </section>
+<section id='sotd'>
+      <p>This document describes the basic requirements for Indic script layout and text support on the Web and in eBooks. These requirements provide information for Web technologies such as CSS, HTML and SVG about how to support users of Indic scripts.  The current document focuses on Devanagari, but there are plans to widen the scope to encompass additional Indian scripts as time goes on. </p>
+      <p>The editor's draft of this document is being developed by the <a href="http://www.w3.org/International/groups/indic-layout/">Indic Layout Task Force</a>, part of the W3C <a href="http://www.w3.org/International/ig/">Internationalization Interest Group</a>. It is published by the <a href="http://www.w3.org/International/core/">Internationalization Working Group</a>. The end target for this document is a Working Group Note.</p>
+    </section>
+<section>
+      <h2>Introduction</h2>
+      <section>
+    <h2>Indian language complexities</h2>
+    <p> India has large linguistic diversity with 22 constitutionally recognized languages and 12 scripts.This document is currently focused on the Devanagari script. The expectation is that over time its scope will widen to cover additional major scripts from the list below.</p>
+    <p>The mapping between languages and scripts is complex. Multiple languages may have common scripts, while a language can be  written in multiple scripts. Each language and script is unique in nature and cannot be easily replicated, even if they share common characteristics. The orthographic changes may also occur in some languages and adoption of new orthography is a gradual process, thus posing additional challenges.</p>
+    <div class="tab-format1">
+          <table  class="tab-format1">
+        <tr>
+              <td>Serial No.</td>
+              <td>Language</td>
+              <td>Script</td>
+            </tr>
+        <tr>
+              <td>1</td>
+              <td>Hindi</td>
+              <td>Devanagari</td>
+            </tr>
+        <tr>
+              <td>2</td>
+              <td>Sanskrit</td>
+              <td>Devanagari</td>
+            </tr>
+        <tr>
+              <td>3</td>
+              <td>Marathi</td>
+              <td>Devanagari</td>
+            </tr>
+        <tr>
+              <td>4</td>
+              <td>Konkani</td>
+              <td>Devanagari</td>
+            </tr>
+        <tr>
+              <td>5</td>
+              <td>Nepali</td>
+              <td>Devanagari</td>
+            </tr>
+        <tr>
+              <td>6</td>
+              <td>Maithili</td>
+              <td>Devanagari</td>
+            </tr>
+        <tr>
+              <td>7</td>
+              <td>Sindhi</td>
+              <td>Devanagari, Perso-Arabic</td>
+            </tr>
+        <tr>
+              <td>8</td>
+              <td>Bodo</td>
+              <td>Devanagari</td>
+            </tr>
+        <tr>
+              <td>9</td>
+              <td>Dogri</td>
+              <td>Devanagari</td>
+            </tr>
+        <tr>
+              <td>10</td>
+              <td>Bengali</td>
+              <td>Bengali</td>
+            </tr>
+        <tr>
+              <td>11</td>
+              <td>Assamese</td>
+              <td>Bengali</td>
+            </tr>
+        <tr>
+              <td>12</td>
+              <td>Manipuri</td>
+              <td>Bengali, Meetei (Mayak)</td>
+            </tr>
+        <tr>
+              <td>13</td>
+              <td>Gujarati</td>
+              <td>Gujarati</td>
+            </tr>
+        <tr>
+              <td>14</td>
+              <td>Kannada</td>
+              <td>Kannada</td>
+            </tr>
+        <tr>
+              <td>15</td>
+              <td>Malayalam</td>
+              <td>Malayalam</td>
+            </tr>
+        <tr>
+              <td>16</td>
+              <td>Odia</td>
+              <td>Odia</td>
+            </tr>
+        <tr>
+              <td>17</td>
+              <td>Punjabi</td>
+              <td>Gurmukhi</td>
+            </tr>
+        <tr>
+              <td>18</td>
+              <td>Tamil</td>
+              <td>Tamil</td>
+            </tr>
+        <tr>
+              <td>19</td>
+              <td>Telugu</td>
+              <td>Telugu</td>
+            </tr>
+        <tr>
+              <td>20</td>
+              <td>Urdu</td>
+              <td>Perso-Arabic</td>
+            </tr>
+        <tr>
+              <td>21</td>
+              <td>Santhali</td>
+              <td>Ol-Chiki, Devanagari</td>
+            </tr>
+        <tr>
+              <td>22</td>
+              <td>Kashmiri</td>
+              <td>Devanagari, Perso-Arabic</td>
+            </tr>
+      </table>
+        </div>
+    <p>The scripts of South Asia share so many common features that a side-by-side comparison
+          of a few will often reveal structural similarities even in the modern letter forms. They are all
+          abugidas in which most symbols stand for a consonant plus an inherent vowel (usually the sound /a/).The North Indian branch of scripts was, like Brahmi itself, mainly used to write Indo-European languages such as Pali and Sanskrit, and eventually the Hindi, Bengali, and Gujarati
+          languages, though it was also the source for scripts for non-Indo-European languages such
+          as Tibetan, Mongolian, and Lepcha. The South Indian scripts are also derived from Brahmi and, therefore, share many similarities in structural characteristics. For more details visit [[!South-Asian-Scripts]].</p>
+    <p>The following figure shows the evolution of Indian scripts over a period of times from Brahmi script.</p>
+    <figure> <img src="images/Brahmi.jpg" width="617" height="637" alt="Evolution of Indic Scripts"/>
+          <figcaption>Development of Indian Scripts</figcaption>
+        </figure>
+    For more details visit  [[!Evolution-of-Indic-Scripts]]</section>
+      <section>
+    <h3>Basic components of Indian languages</h3>
+    <p></p>
+    <section>
+          <h4>Unicode & CLDR</h4>
+          <p><b>Unicode</b> is the Universal character encoding standard, used for representing text for information processing. Unicode encodes all of the individual characters used for all the written languages of the world. The standards provide information about the character and their use. </p>
+          <p><b>Common Locale Data Repository</b> is the largest standard repository of locale data in the world. It is managed by Unicode Consortium. It provides locale data in an XML format for use in computer applications. It facilitates locale-related information sharing among applications regardless of their domains. Its goal is to provide basic linguistic information for diverse “locales” in an open, interoperable form.</p>
+          <p>This data is usable for localizing applications. </p>
+          <p>Some examples of the information that CLDR gathers for languages and territories are:</p>
+          <ul>
+        <li>Date formats </li>
+        <li>Time Zones </li>
+        <li>Number formats </li>
+        <li>Currency and its formats </li>
+        <li>Measurement Systems</li>
+        <li>Collation (Sort order) Specification: Sorting, Searching and Matching</li>
+        <li>Translations of names for language, territory, script, time zones, currencies </li>
+        <li>Script and exemplar characters used by a language</li>
+        <li>Calendaring rules, Formats and important dates.</li>
+      </ul>
+          <p class="note">Reference URL:  [[!CLDR]]</p>
+        </section>
+    <section>
+          <h4>Unicode Normalization</h4>
+          <p>Unicode normalization[[!UAX15]] is a form of text normalization that transforms equivalent sequences of characters into the same representation. Unicode normalization is important in Unicode text processing applications, because it affects the semantics of comparing, searching, and sorting Unicode sequences</p>
+          <p>When a unique representation is required , a normalized form of Unicode text can be used to eliminate unwanted distinctions. The key part of normalization is to provide a unique canonical order for visually non distinct sequences of combining characters.</p>
+          <section>
+        <h5>Canonical & Compatible Equivalence</h5>
+        <p>Unicode contains numerous characters to maintain compatibility with existing standards, some of which are functionally equivalent to other characters or sequences of characters. Because of this, Unicode defines some code point sequences as equivalent. Unicode provides two notions of equivalence: canonical and compatible.</p>
+        <p>Canonical equivalence is a form of equivalence that preserves visually and functionally equivalent characters.</p>
+        <p>The following figure shows the canonical equivalence:</p>
+        <figure> <img src="images/can-eq.jpg" width="547" height="83" alt="Canonical equivalence in Hindi" />
+              <figcaption>Canonical Equivalence</figcaption>
+            </figure>
+      </section>
+        </section>
+    <section>
+          <h4>Unicode Code charts- Devanagari & Devanagari Extended</h4>
+          <p>The following Unicode Character Code chart as per The Unicode Standard, Version 7.0 :
+        <figure> <img src="images/code-chart.jpg" width="549" height="777" alt="Devanagari and Devanagari extended Code Chart" />
+              <figcaption>Unicode Devanagari and Devanagari extended Code Chart</figcaption>
+            </figure>
+      <p class="note">The Unicode code charts for other Indic scripts are available at [[!Code-Charts]]</p>
+        </section>
+    <section>
+          <h4>Character Set for Hindi</h4>
+          <p>This section provides the basic alphabetic system of Devanagari Script as used for Hindi Consonants, Vowels, Modifiers, Matras, Halant, Nukta etc.</p>
+          <h5>Consonant set</h5>
+          <div class="tab-format1">
+        <table>
+              <tr>
+            <td>क</td>
+            <td>क़ </td>
+            <td>ख </td>
+            <td>ख़ </td>
+            <td>ग </td>
+          </tr>
+              <tr>
+            <td>ग़ </td>
+            <td>घ </td>
+            <td>ङ </td>
+            <td>च </td>
+            <td>छ </td>
+          </tr>
+              <tr>
+            <td>ज </td>
+            <td>ज़ </td>
+            <td>झ </td>
+            <td>ञ </td>
+            <td>ट </td>
+          </tr>
+              <tr>
+            <td>ठ </td>
+            <td>ड </td>
+            <td>ड़ </td>
+            <td>ढ </td>
+            <td>ढ़ </td>
+          </tr>
+              <tr>
+            <td>ण </td>
+            <td>त </td>
+            <td>थ </td>
+            <td>द </td>
+            <td>ध </td>
+          </tr>
+              <tr>
+            <td>न </td>
+            <td>प </td>
+            <td>फ </td>
+            <td>फ़ </td>
+            <td>ब </td>
+          </tr>
+              <tr>
+            <td>भ </td>
+            <td>म </td>
+            <td>य </td>
+            <td>र </td>
+            <td>ल </td>
+          </tr>
+              <tr>
+            <td>व </td>
+            <td>श </td>
+            <td>ष </td>
+            <td>स </td>
+            <td>ह </td>
+          </tr>
+            </table>
+        <h5>Vowel set</h5>
+        <table>
+              <tr>
+            <td>अ</td>
+            <td>आ </td>
+            <td>इ </td>
+            <td>ई </td>
+            <td>उ </td>
+            <td>ऊ </td>
+            <td>ऋ </td>
+            <td>ए </td>
+            <td>ऍ </td>
+            <td>ऐ </td>
+            <td>ओ </td>
+            <td>ऑ</td>
+            <td>औ </td>
+          </tr>
+            </table>
+        <h5>Modifiers</h5>
+        <table>
+              <tr>
+            <td> ं -    Anuswara </td>
+            <td>Anuswara,    an archinasal, is denoted by a dot  above    the letter after which it is to be pronounced.
+                  This    falls under Nasal category.</td>
+          </tr>
+              <tr>
+            <td>ँ -Chandrabindu </td>
+            <td>Candrabindu    is pure nasalization as air comes from the nose. It is denoted by a breve    with a dot superposed above  the letter    after which it is to be pronounced. This falls under Nasal category. </td>
+          </tr>
+              <tr>
+            <td>ः -    Visarga </td>
+            <td>Visarga(sending forth),    denoted by two dots placed one above the other.</td>
+          </tr>
+              <tr>
+            <td>ऽ - Avagraha</td>
+            <td>For    extra length with long vowels as seen in the Sanskrit text </td>
+          </tr>
+            </table>
+        <h5>Matras</h5>
+        <table>
+              <tr>
+            <td>ा </td>
+            <td>ि </td>
+            <td>ी </td>
+            <td>ु </td>
+            <td>ू </td>
+            <td>ृ </td>
+            <td>े </td>
+            <td>ॅ </td>
+            <td>ै </td>
+            <td>ो </td>
+            <td>ॉ </td>
+            <td>ौ </td>
+          </tr>
+            </table>
+      </div>
+          <h5>Halant(्)</h5>
+          Halant is used in most writing system to signify the lack of inherent vowel.
+          It is also called virama by Unicode.
+          <h5>Nukta(़) </h5>
+          Nukta is used in Hindi
+          <p class="note"> For more information See [[!Draft-Script-Grammar]] </p>
+        </section>
+  </section>
+    </section>
+<section>
+      <h2>Indic Syllable boundaries (ABNF Valid segmentation-Proposed solution for layout issues in Indian languages)</h2>
+      <section>
+    <h3>Need for ABNF valid segmentation</h3>
+    <p>ABNF Valid Segmentation  based  Indic syllable definition is provided here for correct and standardized representation of Indian languages layout. This will address various issues mentioned in the following sections. </p>
+    <p>This definition will be useful in order to get the uniform display of Indic layout in the browsers, applications, Digital publishing etc.</p>
+  </section>
+      <section>
+    <h3>ABNF based definition of Indic syllable</h3>
+    <p>Augmented Backus–Naur Form (ABNF) is a meta-language based on Backus–Naur Form (BNF), but consisting of its own syntax and derivation rules. The motive principle for ABNF is to describe a formal system of a language to be used as a bidirectional communications protocol.</p>
+    <p><b>V[m] |{CH}C[v][m]|CH </b><br />
+      <br />
+  <br />
+          The linguistic definition of Indic syllable has been mapped to ABNF(Augmented Backus–Naur Form) for the purpose of text segmentation, line breaking , drop letter, letter spacing in horizontal text and vertical text representation. The definition has been elaborated , taking Hindi as an example.</p>
+    <p>The definition is a combination of 3 rules :</p>
+    <p>Rule 1 : V[m]</p>
+    <p>Rule 2 : {CH}C[v][m]</p>
+    <p>Rule 3 : CH  (This rule is applicable only at the end of the word)</p>
+    V(upper case) is independent vowel<br />
+    <br />
+    m is modifier(Anusvara/Visarga/Chandrabindu)<br />
+    <br />
+    C is a consonant which may or may not include a single nukta <br />
+    <br />
+    v (lower case) is any dependent vowel or vowel sign (mātrā)<br />
+    <br />
+    H is halant / virama<br />
+    <br />
+    | is a rule separator<br />
+    <br />
+    [ ] - The enclosed items is optional under this bracket<br />
+    <br />
+    {} - The enclosed item/items occurs zero or repeated multiple times </section>
+      <section>
+    <h3>Various Use cases of ABNF based Indic Syllable definition for Hindi language as example</h3>
+    <p><b>Rule 1 : V[m]</b></p>
+    <div class="tab-format1">
+          <table  class="tab-format">
+        <tr>
+              <td>Sl. No.</td>
+              <td>Examples</td>
+              <td>Definition</td>
+            </tr>
+        <tr>
+              <td>1</td>
+              <td>अ, ई, उ </td>
+              <td>V (Vowel) is a    syllable </td>
+            </tr>
+        <tr>
+              <td>2</td>
+              <td>अं, उँ, आः </td>
+              <td>V+ Modifier is a    syllable</td>
+            </tr>
+      </table>
+          <p><b>Rule 2 : {CH}C[v][m]</b></p>
+          <table  class="tab-format">
+        <tr>
+              <td>Sl. No.</td>
+              <td>Examples</td>
+              <td>Definition</td>
+            </tr>
+        <tr>
+              <td>1</td>
+              <td>र, क, ज, ल, म </td>
+              <td>Consonant is a syllable</td>
+            </tr>
+        <tr>
+              <td>2</td>
+              <td>प्प, क्ख,च्त, ज्ज्व, त्क्ल, त्स्न</td>
+              <td>Zero or more    Consonant + Virama sequences followed by consonant is a syllable</td>
+            </tr>
+        <tr>
+              <td>3</td>
+              <td>र्त, र्त्स, र्त्स्न,    र्त्स्न्य, फ़्क़ </td>
+              <td>Zero or more Consonant (Nukta) +Virama  followed    by consonant is a syllable </td>
+            </tr>
+        <tr>
+              <td>4</td>
+              <td>र्ता, र्त्स्न्या, फ़्जी, क्या</td>
+              <td>Zero or more consonant+ (Nukta)+ virāma sequences    followed by a consonant (+Nukta) followed by a vowel sign is a syllable</td>
+            </tr>
+        <tr>
+              <td>5</td>
+              <td>तः,स्तं, स्त्रँ, स्तः, फ़्ज़ँ  </td>
+              <td>zero or more consonant+ (Nukta)+ virāma sequences followed by a consonant (+Nukta) followed by modifier is a syllable</td>
+            </tr>
+        <tr>
+              <td>6</td>
+              <td>र्त्स्न्या:    त्स्न्युं, त्स्न्युँ, फ़्ज़ें,हिं</td>
+              <td>zero or more consonant+ (Nukta)+ virāma sequences    followed by a consonant (+Nukta) followed by a vowel sign and modifier is a syllable</td>
+            </tr>
+        <tr>
+              <td>7</td>
+              <td>स्थि, ज्जि, ख्वा </td>
+              <td>Zero or more Consonant +halant sequences followed by a    consonant and vowel sign is a syllable</td>
+            </tr>
+      </table>
+          <p><b>Rule 3 : CH</b></p>
+          <p><b>त्,व्, म्, भ् etc are syllable in Hindi only at the end of the word </b></p>
+          <p><b>Examples of combination of the rules :</b></p>
+          <p><b>1.   स्वागतम् -  CHCv + C + C + CH has following syllables :</b></p>
+          <table  class="tab-format">
+        <tr>
+              <td><strong>स्वा</strong></td>
+              <td><strong>CHCv</strong></td>
+            </tr>
+        <tr>
+              <td><strong>ग</strong></td>
+              <td><strong>C</strong></td>
+            </tr>
+        <tr>
+              <td><strong>त</strong></td>
+              <td><strong>C</strong></td>
+            </tr>
+        <tr>
+              <td><strong>म्</strong></td>
+              <td><strong>CH</strong></td>
+            </tr>
+      </table>
+          <p><b>2. भरतनाट्यम- C + C + C + Cv + CHC + C</b></p>
+          <table class="tab-format">
+        <tr>
+              <td><strong>भ</strong></td>
+              <td><strong>C</strong></td>
+            </tr>
+        <tr>
+              <td><strong>र</strong></td>
+              <td><strong>C</strong></td>
+            </tr>
+        <tr>
+              <td><strong>त</strong></td>
+              <td><strong>C</strong></td>
+            </tr>
+        <tr>
+              <td><strong>ना</strong></td>
+              <td><strong>Cv</strong></td>
+            </tr>
+        <tr>
+              <td><strong>ट्य</strong></td>
+              <td><strong>CHC</strong></td>
+            </tr>
+        <tr>
+              <td><strong>म</strong></td>
+              <td><strong>C</strong></td>
+            </tr>
+      </table>
+        </div>
+  </section>
+    </section>
+<section>
+      <h2>Text segmentation</h2>
+    <p>A string of Unicode-encoded text often needs to be broken up into text elements programmatically. Common examples of text elements include what users think of as characters, words, lines (more precisely, where line breaks are allowed), and sentences. The precise determination of text elements may vary according to orthographic conventions for a given script or language. </p>
+    <p>The goal of matching user perceptions cannot always be met exactly because the text alone does not always contain enough information to unambiguously decide boundaries. For example, the period (U+002E FULL STOP) is used ambiguously, sometimes for end-of-sentence purposes, sometimes for abbreviations, and sometimes for numbers. In most cases, however, programmatic text boundaries can match user perceptions quite closely, although sometimes the best that can be done is not to surprise the user. </p>
+      <p>Word boundaries are used in a number of different contexts. The most familiar ones are selection (double-click mouse selection, or “move to next word” control-arrow keys), and “whole word search” for search and replace. They are also used in database queries, to determine whether elements are within a certain number of words of one another.    </p>
+      <p>Some special sentence boundaries are used, like the double purnaviram/danda, possibly with numbers (as in Sanskrit text, shlokas etc.). Where the text contains a Devanagari phrase separator called danda or purnaviram (।) and double danda (।। used to mark end of a verse), in some  browsers a final word is selected with the purnaviram on double-click, while in other browsers the danda is selected  separately. It is recommended that  a line should not  begin with purnaviram/danda or double danda. In this way the properties of danda should be same as the properties of full stop or similar punctuation marks.</p>
+      <p>Grapheme cluster boundaries are   	important for collation, regular expressions, UI   	interactions (such as mouse selection, arrow key movement, backspacing),   	segmentation for vertical text, identification of boundaries for   	initial-letter styling, and counting “character” positions within text. [UAX29]     User-percieved character boundaries  are  based on tailored grapheme cluster boundaries to conform to the Indic syllable definition.<br />
+  </p>
+      <p>At the sub-word level, the text segmentation should be done using Indic orthographic syllables as the basic unit. An orthographic syllable is described in the earlier section on Indic syllable boundaries, and does not necessarily coincide with a phonetic syllable. Essentially, a syllable includes a base consonant and any combination of the following characters in the text stream:</p>
+      <ul>
+        <li>sequences of consonants preceded by virama (i.e. conjuncts).</li>
+        <li>vowel signs</li>
+        <li>visarga, anusvara or candrabindu.</li>
+      </ul>
+      <p>For example, Indic script behavior in initial letter styling is based on syllables, rather than individual letter forms. The  figure  below shows an example of a drop intial in Hindi.</p> 
+      <img src="images/drop-letter1.jpg" />
+
+<p> In the first word of the paragraph, स्कूल ('skūl'), the sequence of characters is stored in memory is as follows:</p>
+<p>स ‎U+0938 DEVANAGARI LETTER SA<br>
+&nbsp;् ‎U+094D DEVANAGARI SIGN VIRAMA <br>
+क ‎U+0915 DEVANAGARI LETTER KA<br>
+&nbsp;ू ‎U+0942 DEVANAGARI VOWEL SIGN UU<br>
+ल ‎U+0932 DEVANAGARI LETTER LA</p>
+<p>There are two orthographic syllables in this word: SA+VIRAMA+KA+UU and LA.  Note, however, that there are three Unicode grapheme clusters here: SA+VIRAMA, KA+UU and LA.</p>
+<p>Styling is done on the basis of the whole orthographic syllable, not the first character, nor even the first grapheme. </p>
+</section>
+<section>
+  <h2>Line breaking</h2>
+      <p>When inline-level content is laid out into lines, it is broken across line boxes. Such a break is called a line break. In most  writing systems, in the absence of hyphenation a line break occurs only at word  boundaries. Many writing systems use spaces or punctuation to explicitly  separate words, and line break opportunities can be identified by these  characters. Line  breaking, also known as word wrapping, is the process of breaking a section of  text into lines such that it will fit in the available width of a page, window  or other display area. </p>
+      <section>
+    <h3>Hyphenation</h3>
+    <p> There are different cases of hyphenation, some of the cases are given below :</p>
+    <p><b>Case 1 :</b> Hyphens are commonly used in Copulative compounds words in Hindi language. Hindi has both prefixes and suffixes which are joined to words with a hyphen.<br />
+        <h2>नर-नारी, लाभ- हानि, माता-पिता, ऊंच - नीच</h2>
+    <p><b>Case 2:</b> Single word can breaks at the end of the line at Indic syllable level using hyphen </p>
+    <p>In the below screenshot, words आकर्षण and विज्ञापन not follow Indic syllable definition in some of the browsers.</p>
+    <br />
+    <img src="images/hyphen.jpg" width="537" height="227" alt="Example of Line breaking" /> </section>
+      <section>
+    <h3>Guiding principles of Line breaking for Indian languages</h3>
+    <p>In Indic writing system , it is preferred that line breaks at word boundaries ,if required following principles may be adhered :</p>
+    <p><b>Rule 1:</b> New line cannot begin with following symbols/Punctuation marks. Also these should be retain with the associated text</p>
+    <ul>
+          <li>Closing brackets</li>
+          <li>Devanagari Danda /Purnaviram</li>
+          <li>Commas </li>
+          <li>Visarga</li>
+          <li>Decimal symbols</li>
+          <li>Semicolon</li>
+          <li>Repetition of punctuation marks such as semicolon with closing brackets, Semicolon with single/ Double quotes , Closing brackets with commas/Semicolon etc</li>
+          <li>Mathematical operators</li>
+        </ul>
+    <p><b>Rule 2: </b>The definition of Indic syllable may be used to break the line and a hyphen should be at the breaking point so that word can be read intuitively</p>
+    <p><b>Rule 3: </b>The hyphenated words can be broken at the hyphen e.g.:</p>
+    <ul>
+          <li>नर-नारी should be treated as:</li>
+          <li>नर- on the first line and नारी on the next line</li>
+        </ul>
+    <p><b>Rule 4:</b> Expression with mathematical symbol should be treated as single unit so that at the end of the line expression should not breaks at operator level</p>
+    <p><b>Rule 5:</b> Breaking should not be allowed at numerical values such as currency values, year etc. e.g.</p>
+    <p>“100.00” or “10,000”, nor in “12:59”</p>
+  </section>
+    </section>
+<section>
+      <h2>Requirements for Indic Layout</h2>
+      <section>
+    <h3>Initial letter styling</h3>
+    <p>Drop initial is a typographic effect emphasizing the initial letter(s) of a block element with a presentation similar to a 'floated' element.</p>
+    <section>
+    <h4>Selecting initial letters</h4>
+    
+    <p>The drop initial letter in Indic scripts must be selected on the basis of orthographic syllables, rather than individual letter forms (see an example at the end of section 3, Text segmentation). A detailed definition of Indic syllables can be found in section 2, Indic Syllable boundaries.</p>
+    </section>
+    
+    <section>
+    <h4>Typical drop initial usage in Indic scripts</h4>
+    <p>Most of the Indic drop initial letters in magazines and newspapers use 2 to 4 line drops. Some examples are shown below.</p>
+    <p>--- add pictures here from page one-two of the pdf ---</p>
+    <p>In examples of this kind, reference points on the drop cap must align precisely with reference points in the text. In Indic scripts the top reference point is the hanging base line for those scripts that have one, and the bottom alignment point is the text after -edge.</p>
+    </section>
+    
+    
+    <p>Here are some additional  examples of initial highlighted letter and drop letter based on the Indic syllable definition. In Devanagari the hanging baseline may be preferred as an alignment point. In that case the primary connection point connects the text-after-edge of the initial letter with the text-after-edge of the nth line, but the secondary connection point connects the hanging baselines of the initial letter and the initial line. The drop initial effect may also be used for writing systems which use different alignment strategies. </p>
+    <table>
+      <tr>
+    <td><img src="images/I-letter2.png" alt="Bengali example" /></td>
+     <td><img src="images/I-letter3.png" alt="Tamil example"/></td>
+    </tr>
+    <tr>
+    <td><img src="images/I-letter1.png" width="526" height="338" alt="Bengali example" /></td>
+     <td><img src="images/I-letter5.png" alt="Malayalam example"/></td>
+    </tr>
+     <tr>
+    <td><img src="images/I-letter4.png" alt="Odia example"/></td>
+     <td><img src="images/I-letter6.png" alt="Marathi example" width="555" height="255"/></td>
+    </tr>
+  </table>
+    <p>The remainder of this section describes the detailed rules for placement and alignment of hindi characters with initial letter styling relative to the adjacent text.</p>
+    <p class="note">Detailed rule information to be added here.</p>
+  </figcaption></figure></section>
+      <section>
+   
+    <h3>Letter Spacing</h3>
+    <p>In styling issues like horizontal spacing, the spacing between characters like C E R T I F I C A T E, the space is given between the every character in case of English. But in case of Indian language, the space needs to be introduced after each syllable for correct representation.</p>
+    <p>For letter spacing in Indian languages it is recommended that spacing should follow Indic syllable definition. </p>
+    <p>Here is the some examples of letter spacing that based on definition :</p>
+    1.	अं त र्रा ष्ट्री य क र ण<br />
+    2.	स्वा ग त म्<br />
+    3.	सु स ज्जि त<br />
+    4.	स म्प्र ति</section>
+      <section>
+    <h3>Vertical arrangements of characters</h3>
+    <p>In vertical arrangement of characters writing each character on a new line may not be suitable in Indian languages. The vertical arrangements of characters are sometimes used in Indian texts. In order to form correct arrangements, it is preferred to follow tailored grapheme cluster approach.
+          Variations of vertical arrangement of the characters in Hindi is represent below :</p>
+    <h4>Variations in vertical arrangements</h4>
+    <figure> <img src="images/vert2.jpg" width="608" height="250" alt="Example of Vertical arrangements in Hindi" />
+          <figcaption>Variations in vertical arrangements</figcaption>
+        </figure>
+    <h4>Vertical representation of the word 'स्वागतम्' based on Indic Syllable definition:</h4>
+    <table class="tab-format1">
+          <tr>
+        <td><strong>स्वा</strong></td>
+      </tr>
+          <tr>
+        <td><strong>ग</strong></td>
+      </tr>
+          <tr>
+        <td><strong>त</strong></td>
+      </tr>
+          <tr>
+        <td><strong>म्</strong></td>
+      </tr>
+        </table>
+  </section>
+      <section>
+    <h3>Collation</h3>
+    <p>Collation is one of the most important features for Indic languages . It determines the order in which a given culture indexes its characters. This is best seen in a dictionary sorting order where for easy search words are sorted and arranged in a specific order. Within a given script, each allo-script may have a different sort-order. Thus in Hindi the conjunct glyph क्ष is sorted along with क , since the first letter of that conjunct is क and on a similar principle ज्ञ is sorted along with ज . The same is not the case with Marathi and Nepali which admit a different sort order.</p>
+    <p>Different scripts admit different sort orders and for all high
+          end NLP applications. Sorting is
+          a crucial feature to ensure that the applications index data as per the cultural perception of
+          that community. In quite a few States, sort order is clearly defined by the statutory bodies
+          of that state and hence it is crucial that such sort order be ascertained and introduced in
+          the document
+          .</p>
+    <p>The order(left to right) as given below is pertinent to sorting by a computer program and is compliant
+          with CLDR as laid down by Unicode.</p>
+    <div class="tab-format1">
+          <table>
+        <tr>
+              <td> ़ <br />
+            \u093C </td>
+              <td>ॐ <br>
+            \u0950</td>
+              <td>ं <br>
+            \u0902 </td>
+              <td>ँ <br>
+            \u0901></td>
+              <td>ः <br>
+            \u0903 </td>
+              <td>अ <br>
+            \u0905</td>
+            </tr>
+        <tr>
+              <td>आ <br>
+            \u0906 </td>
+              <td>इ <br>
+            \u0907 </td>
+              <td>ई <br>
+            \u0908 </td>
+              <td>उ <br>
+            \u0909 </td>
+              <td>ऊ <br>
+            \u090A </td>
+              <td>ऋ <br>
+            \u090B</td>
+            </tr>
+        <tr>
+              <td>ऌ <br>
+            \u090C </td>
+              <td>ऍ <br>
+            \u090D</td>
+              <td>ए <br>
+            \u090F </td>
+              <td>ऐ <br>
+            \u0910 </td>
+              <td>ऑ <br>
+            \u0911 </td>
+              <td>ओ <br>
+            \u0913 </td>
+            </tr>
+        <tr>
+              <td>औ <br>
+            \u0914</td>
+              <td>क <br>
+            \u0915 </td>
+              <td>ख <br>
+            \u0916</td>
+              <td>ग <br>
+            \u0917 </td>
+              <td>घ <br>
+            \u0918</td>
+              <td>ङ <br>
+            \u0919 </td>
+            </tr>
+        <tr>
+              <td>च <br>
+            \u091A </td>
+              <td>छ <br>
+            \u091B</td>
+              <td>ज <br>
+            \u091C</td>
+              <td>झ <br>
+            \u091D</td>
+              <td>ञ <br>
+            \u091E </td>
+              <td>ट <br>
+            \u091F </td>
+            </tr>
+        <tr>
+              <td> ठ <br>
+            \u0920</td>
+              <td>ड <br>
+            \u0921 </td>
+              <td>ढ <br>
+            \u0922 </td>
+              <td>ण <br>
+            \u0923 </td>
+              <td>त <br>
+            \u0924 </td>
+              <td>थ <br>
+            \u0925</td>
+            </tr>
+        <tr>
+              <td>द <br>
+            \u0926</td>
+              <td>ध <br>
+            \u0927 </td>
+              <td>न <br>
+            \u0928 </td>
+              <td>प <br>
+            \u092A </td>
+              <td>फ <br>
+            \u092B </td>
+              <td>ब <br>
+            \u092C </td>
+            </tr>
+        <tr>
+              <td>भ <br>
+            \u092D</td>
+              <td>म <br>
+            \u092E </td>
+              <td>य <br>
+            \u092F </td>
+              <td>र <br>
+            \u0930</td>
+              <td>ल <br>
+            \u0932 </td>
+              <td>ळ <br>
+            \u0933 </td>
+            </tr>
+        <tr>
+              <td>व <br>
+            \u0935</td>
+              <td>श <br>
+            \u0936 </td>
+              <td>ष <br>
+            \u0937 </td>
+              <td>स <br>
+            \u0938 </td>
+              <td>ह <br>
+            \u0939 </td>
+              <td>ऽ <br>
+            \u093D </td>
+            </tr>
+        <tr>
+              <td>ा <br>
+            \u093E </td>
+              <td>ि <br>
+            \u093F </td>
+              <td>ी <br>
+            \u0940</td>
+              <td>ु <br>
+            \u0941 </td>
+              <td>ू <br>
+            \u0942 </td>
+              <td>\U0943</td>
+            </tr>
+        <tr>
+              <td>\U0944 </td>
+              <td>\U0945 </td>
+              <td>े <br>
+            \u0947 </td>
+              <td>ै <br>
+            \u0948</td>
+              <td>ॉ <br>
+            \u0949</td>
+              <td>ो <br>
+            \u094B </td>
+            </tr>
+        <tr>
+              <td>ौ <br>
+            \u094C </td>
+              <td>्<br>
+            \u094D</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+      </table>
+        </div>
+    <p>Following is the sort order of Consonant 'क'</p>
+    <div class="tab-format1">
+          <table>
+        <tr>
+              <td>क</td>
+              <td>कँ </td>
+              <td>कं </td>
+              <td>कः </td>
+              <td>का </td>
+              <td>कि </td>
+              <td>की </td>
+              <td>कु </td>
+              <td>कू </td>
+              <td>कृ </td>
+              <td>के </td>
+              <td>कॅ</td>
+            </tr>
+        <tr>
+              <td>कै </td>
+              <td>को </td>
+              <td>कॉ </td>
+              <td>कौ </td>
+              <td>क् </td>
+              <td>क़ </td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+      </table>
+        </div>
+  </section>
+    </section>
+<section>
+  <h2>Contributors</h2>
+      <div class="tab-format1">
+    <table>
+          <tr>
+        <td><strong>Serial No.</strong></td>
+        <td><strong>Name</strong></td>
+        <td><strong>Organization</strong></td>
+      </tr>
+          <tr>
+        <td>1</td>
+        <td>Manoj Kumar Jain</td>
+        <td>DeitY</td>
+      </tr
+                  >
+          <tr>
+        <td>2</td>
+        <td>Gautam Sengupta</td>
+        <td>University of Hyderabad </td>
+      </tr>
+          <tr>
+        <td>3</td>
+        <td>Girish Nath Jha</td>
+        <td>JNU</td>
+      </tr>
+          <tr>
+        <td>4</td>
+        <td>Rajeev Sangal</td>
+        <td>IIT Varanasi</td>
+      </tr>
+          <tr>
+        <td>5</td>
+        <td>Dipti Misra Sharma</td>
+        <td>IIIT Hyderabad</td>
+      </tr>
+          <tr>
+        <td>6</td>
+        <td>R K Sharma</td>
+        <td>Thapar University</td>
+      </tr>
+          <tr>
+        <td>7</td>
+        <td>Rajat Mohanty</td>
+        <td>IIT Bombay</td>
+      </tr>
+          <tr>
+        <td>8</td>
+        <td>Venkatesh Choppella</td>
+        <td>IIIT Hyderabad</td>
+      </tr>
+          <tr>
+        <td>9</td>
+        <td>Soma Paul</td>
+        <td>IIIT Hyderabad</td>
+      </tr>
+          <tr>
+        <td>10</td>
+        <td>M D Kulkarni</td>
+        <td>C-DAC Pune</td>
+      </tr>
+          <tr>
+        <td>11</td>
+        <td>Panchanan Mohanty</td>
+        <td>University of Hyderabad</td>
+      </tr>
+          <tr>
+        <td>12</td>
+        <td>G. Uma Maheshwar Rao</td>
+        <td>University of Hyderabad</td>
+      </tr>
+        </table>
+  </div>
+    </section>
+</body>
+</html>
