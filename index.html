@@ -290,19 +290,22 @@ table.simple {
     </script>
     </head>
     <body id="respecDocument" role="document" class="h-entry">
-<section id='abstract'>
+<div id='abstract'>
       <p>This document describes the basic requirements for Indian Languages layout for display purpose. It discusses some of the major layout requirements in first letter pseudo-element, vertical arrangements of characters, letter spacing, text segmentation, line breaking and collation rules in Indic languages. </p>
       <p>The minimal requirements presented in this document for  Indian languages text layout will also be used in E-publishing and CSS Standard. This documents covers major issues of e-content in Indian languages in order to  create standardize format of text layout to address storage, rendering  problems, vertical writing, letter spacing, collation, line breaking etc.</p>
       <p>It also describes the definition of ABNF(Augmented Backus–Naur Form)
     based valid segmentation-Indic orthographic syllable in order to get the proper display in the browsers. The text segmentation[[!UAX29]] and line breaking  [[!UAX14]] algorithms are considered in detail. The CSS & digital publications standards will benefit from this document. 
-  </section>
-<section id='sotd'>
+  </div>
+<div id='sotd'>
       <p>This document describes the basic requirements for Indic script layout and text support on the Web and in eBooks. These requirements provide information for Web technologies such as CSS, HTML and SVG about how to support users of Indic scripts.  The current document focuses on Devanagari, but there are plans to widen the scope to encompass additional Indian scripts as time goes on. </p>
       <p>The editor's draft of this document is being developed by the <a href="http://www.w3.org/International/groups/indic-layout/">Indic Layout Task Force</a>, part of the W3C <a href="http://www.w3.org/International/ig/">Internationalization Interest Group</a>. It is published by the <a href="http://www.w3.org/International/core/">Internationalization Working Group</a>. The end target for this document is a Working Group Note.</p>
-    </section>
-<section>
+    </div>
+    
+    
+<section id="h_introduction">
       <h2>Introduction</h2>
-      <section>
+      
+  <section id="h_indian_language_complexities">
     <h2>Indian language complexities</h2>
     <p> India has large linguistic diversity with 22 constitutionally recognized languages and 12 scripts.This document is currently focused on the Devanagari script. The expectation is that over time its scope will widen to cover additional major scripts from the list below.</p>
     <p>The mapping between languages and scripts is complex. Multiple languages may have common scripts, while a language can be  written in multiple scripts. Each language and script is unique in nature and cannot be easily replicated, even if they share common characteristics. The orthographic changes may also occur in some languages and adoption of new orthography is a gradual process, thus posing additional challenges.</p>
@@ -435,13 +438,16 @@ table.simple {
           <figcaption>Development of Indian Scripts</figcaption>
         </figure>
     For more details visit  [[!Evolution-of-Indic-Scripts]]</section>
-      <section>
+
+
+  <section id="h_basic_components_of_indian_languages">
     <h3>Basic components of Indian languages</h3>
-    <p></p>
-    <section>
-          <h4>Unicode & CLDR</h4>
-          <p><b>Unicode</b> is the Universal character encoding standard, used for representing text for information processing. Unicode encodes all of the individual characters used for all the written languages of the world. The standards provide information about the character and their use. </p>
-          <p><b>Common Locale Data Repository</b> is the largest standard repository of locale data in the world. It is managed by Unicode Consortium. It provides locale data in an XML format for use in computer applications. It facilitates locale-related information sharing among applications regardless of their domains. Its goal is to provide basic linguistic information for diverse “locales” in an open, interoperable form.</p>
+
+
+    <section id="h_unicode_and_cldr">
+          <h4>Unicode &amp; CLDR</h4>
+          <p><dfn id="def_unicode">Unicode</dfn> is the Universal character encoding standard, used for representing text for information processing. Unicode encodes all of the individual characters used for all the written languages of the world. The standards provide information about the character and their use. </p>
+          <p><dfn id="def_cldr">Common Locale Data Repository</dfn> is the largest standard repository of locale data in the world. It is managed by Unicode Consortium. It provides locale data in an XML format for use in computer applications. It facilitates locale-related information sharing among applications regardless of their domains. Its goal is to provide basic linguistic information for diverse “locales” in an open, interoperable form.</p>
           <p>This data is usable for localizing applications. </p>
           <p>Some examples of the information that CLDR gathers for languages and territories are:</p>
           <ul>
@@ -457,12 +463,14 @@ table.simple {
       </ul>
           <p class="note">Reference URL:  [[!CLDR]]</p>
         </section>
-    <section>
+        
+    <section id="h_unicode_normalization">
           <h4>Unicode Normalization</h4>
           <p>Unicode normalization[[!UAX15]] is a form of text normalization that transforms equivalent sequences of characters into the same representation. Unicode normalization is important in Unicode text processing applications, because it affects the semantics of comparing, searching, and sorting Unicode sequences</p>
           <p>When a unique representation is required , a normalized form of Unicode text can be used to eliminate unwanted distinctions. The key part of normalization is to provide a unique canonical order for visually non distinct sequences of combining characters.</p>
-          <section>
-        <h5>Canonical & Compatible Equivalence</h5>
+          
+      <section id="h_canonical_and_compatible_equivalence">
+        <h5>Canonical &amp; Compatible Equivalence</h5>
         <p>Unicode contains numerous characters to maintain compatibility with existing standards, some of which are functionally equivalent to other characters or sequences of characters. Because of this, Unicode defines some code point sequences as equivalent. Unicode provides two notions of equivalence: canonical and compatible.</p>
         <p>Canonical equivalence is a form of equivalence that preserves visually and functionally equivalent characters.</p>
         <p>The following figure shows the canonical equivalence:</p>
@@ -470,18 +478,22 @@ table.simple {
               <figcaption>Canonical Equivalence</figcaption>
             </figure>
       </section>
-        </section>
-    <section>
-          <h4>Unicode Code charts- Devanagari & Devanagari Extended</h4>
+      
+    </section>
+    <section id="h_unicode_code_charts_devanagari">
+          <h4>Unicode Code charts- Devanagari &amp; Devanagari Extended</h4>
           <p>The following Unicode Character Code chart as per The Unicode Standard, Version 7.0 :
         <figure> <img src="images/code-chart.jpg" width="549" height="777" alt="Devanagari and Devanagari extended Code Chart" />
               <figcaption>Unicode Devanagari and Devanagari extended Code Chart</figcaption>
             </figure>
       <p class="note">The Unicode code charts for other Indic scripts are available at [[!Code-Charts]]</p>
         </section>
-    <section>
+        
+    <section id="h_character_set_for_hindi">
           <h4>Character Set for Hindi</h4>
           <p>This section provides the basic alphabetic system of Devanagari Script as used for Hindi Consonants, Vowels, Modifiers, Matras, Halant, Nukta etc.</p>
+          
+          <section id="h_hindi_consonant_set">
           <h5>Consonant set</h5>
           <div class="tab-format1">
         <table>
@@ -542,6 +554,10 @@ table.simple {
             <td>ह </td>
           </tr>
             </table>
+            </div>
+      </section>
+            
+            <section id="h_hindi_vowel_set">
         <h5>Vowel set</h5>
         <table>
               <tr>
@@ -560,6 +576,9 @@ table.simple {
             <td>औ </td>
           </tr>
             </table>
+            </section>
+            
+            <section id="h_hindi_modifiers">
         <h5>Modifiers</h5>
         <table>
               <tr>
@@ -580,6 +599,9 @@ table.simple {
             <td>For    extra length with long vowels as seen in the Sanskrit text </td>
           </tr>
             </table>
+            </section>
+            
+            <section id="h_hindi_matras">
         <h5>Matras</h5>
         <table>
               <tr>
@@ -597,30 +619,38 @@ table.simple {
             <td>ौ </td>
           </tr>
             </table>
-      </div>
+            </section>
+            
+            <section id="h_hindi_halant">
           <h5>Halant(्)</h5>
           Halant is used in most writing system to signify the lack of inherent vowel.
           It is also called virama by Unicode.
+          </section>
+          
+          <section id="h_hindi_nukta">
           <h5>Nukta(़) </h5>
           Nukta is used in Hindi
           <p class="note"> For more information See [[!Draft-Script-Grammar]] </p>
-        </section>
+          </section>
+    </section>
+        
+        
   </section>
     </section>
-<section>
+<section id="h_indic_orthographic_syllable_boundaries">
       <h2>Indic orthographic syllable boundaries(ABNF Valid segmentation-Proposed solution for layout issues in Indian languages)</h2>
-      <section>
+    
+      <section id="h_need_for_abnf_valid_segmentation">
     <h3>Need for ABNF valid segmentation</h3>
     <p>ABNF Valid Segmentation  based  Indic orthographic syllable definition is provided here for correct and standardized representation of Indian languages layout. This will address various issues mentioned in the following sections. </p>
     <p>This definition will be useful in order to get the uniform display of Indic layout in the browsers, applications, Digital publishing etc.</p>
   </section>
-      <section>
+  
+      <section id="h_abnf_based_definition_of_indic_syllable">
     <h3>ABNF based definition of Indic orthographic syllable</h3>
     <p>Augmented Backus–Naur Form (ABNF) is a meta-language based on Backus–Naur Form (BNF), but consisting of its own syntax and derivation rules. The motive principle for ABNF is to describe a formal system of a language to be used as a bidirectional communications protocol.</p>
-    <p><b>V[m] |{CH}C[v][m]|CH </b><br />
-      <br />
-  <br />
-          The linguistic definition of Indic orthographic syllable has been mapped to ABNF(Augmented Backus–Naur Form) for the purpose of text segmentation, line breaking , drop letter, letter spacing in horizontal text and vertical text representation. The definition has been elaborated , taking Hindi as an example.</p>
+    <p><b>V[m] |{CH}C[v][m]|CH </b></p>
+    <p>The linguistic definition of Indic orthographic syllable has been mapped to ABNF(Augmented Backus–Naur Form) for the purpose of text segmentation, line breaking , drop letter, letter spacing in horizontal text and vertical text representation. The definition has been elaborated , taking Hindi as an example.</p>
     <p>The definition is a combination of 3 rules :</p>
     <p>Rule 1 : V[m]</p>
     <p>Rule 2 : {CH}C[v][m]</p>
@@ -640,9 +670,11 @@ table.simple {
     [ ] - The enclosed items is optional under this bracket<br />
     <br />
     {} - The enclosed item/items occurs zero or repeated multiple times </section>
-      <section>
+    
+    
+      <section id="h_abnf_syllabe_definition_use_cases_hindi">
     <h3>Various Use cases of ABNF based Indic orthographic syllable definition for Hindi language as example</h3>
-    <p><b>Rule 1 : V[m]</b></p>
+    <p><strong>Rule 1 : V[m]</strong></p>
     <div class="tab-format1">
           <table  class="tab-format">
         <tr>
@@ -756,8 +788,11 @@ table.simple {
         </div>
   </section>
     </section>
-<section>
-      <h2>Text segmentation</h2>
+    
+    
+    
+<section id="h_text_segmentation">
+  <h2>Text segmentation</h2>
       <p>A string of Unicode-encoded text often needs to be broken up into text elements programmatically. Common examples of text elements include what users think of as characters, words, lines (more precisely, where line breaks are allowed), and sentences. The precise determination of text elements may vary according to orthographic conventions for a given script or language. The goal of matching user perceptions cannot always be met exactly because the text alone does not always contain enough information to unambiguously decide boundaries. For example, the period (U+002E FULL STOP) is used ambiguously, sometimes for end-of-sentence purposes, sometimes for abbreviations, and sometimes for numbers. In most cases, however, programmatic text boundaries can match user perceptions quite closely, although sometimes the best that can be done is not to surprise the user. Word boundaries are used in a number of different contexts. The most familiar ones are selection (double-click mouse selection, or “move to next word” control-arrow keys), and “Whole Word Search” for search and replace. They are also used in database queries, to determine whether elements are within a certain number of words of one another .
     Some special sentence boundaries like the double poorna virama, possibly with numbers (as in Sanskrit text, shlokas etc.) Grapheme cluster boundaries are   	important for collation, regular expressions, UI   	interactions (such as mouse selection, arrow key movement, backspacing),   	segmentation for vertical text, identification of boundaries for   	Initial-letter styling, and counting “character” positions within text. [[!UAX29]]</p>
       <p>Solution for word boundaries:<br />
@@ -766,10 +801,10 @@ table.simple {
       <p>In case of Devanagari phrase separator called Danda or purnaviram (।) and double danda (।।: used to mark end of the verse),In some of the browsers ending word is selected with purnaviram on double-click while in some browsers Danda is selected as a separate. It is recommended that  line should not  begin with purnaviram/Danda and double danda. So the properties of Danda should be same as the properties of FullStop or other punctuation marks so that new line should not begin with Danda and double danda.</p>
       <p>For others characters, the text segmentation should be done as Indic orthographic syllable.</p>
       <p>Indic script behavior in initial letter styling is based on syllables, rather than individual letter forms.</p> 
-      <img src="images/drop-letter1.jpg" />
+      <img src="images/drop-letter1.jpg" alt="example of drop letter"/>
 
 <p>The above Figure  shows an example of a drop intial in Hindi. In the first word of the paragraph, स्कूल ('skūl'), the sequence of characters is stored in memory is as follows:</p>
-<img src="images/initial-letter-ex.jpg" />
+<img src="images/initial-letter-ex.jpg" alt="initial letter example" />
 <p>There are two syllables in this word: SA+VIRAMA+KA+UU and LA.  Note, however, that there are three Unicode grapheme clusters here: SA+VIRAMA, KA+UU and LA.</p>
 <p>Styling is done on the basis of the whole orthographic syllable, not the first character, nor even the first grapheme. </p>
 <p>A syllable includes a base consonant and any combination of the following characters in the text stream:</p>
@@ -779,19 +814,25 @@ table.simple {
 <li>visarga, anusvara or candrabindu.</li>
 </ul>
     </section>
-<section>
+    
+    
+<section id="h_line_breaking">
       <h2>Line breaking</h2>
       <p>When inline-level content is laid out into lines, it is broken across line boxes. Such a break is called a line break. In most  writing systems, in the absence of hyphenation a line break occurs only at word  boundaries. Many writing systems use spaces or punctuation to explicitly  separate words, and line break opportunities can be identified by these  characters. Line  breaking, also known as word wrapping, is the process of breaking a section of  text into lines such that it will fit in the available width of a page, window  or other display area. </p>
-      <section>
+      
+      
+      <section id="h_hyphenation">
     <h3>Hyphenation</h3>
     <p> There are different cases of hyphenation, some of the cases are given below :</p>
-    <p><b>Case 1 :</b> Hyphens are commonly used in Copulative compounds words in Hindi language. Hindi has both prefixes and suffixes which are joined to words with a hyphen.<br />
-        <h2>नर- नारी, लाभ- हानि, माता-पिता, ऊंच - नीच</h2>
+    <p><b>Case 1 :</b> Hyphens are commonly used in Copulative compounds words in Hindi language. Hindi has both prefixes and suffixes which are joined to words with a hyphen.</p>
+        <p>नर- नारी, लाभ- हानि, माता-पिता, ऊंच - नीच</p>
     <p><b>Case 2:</b> Single word can breaks at the end of the line at Indic orthographic syllable level using hyphen </p>
     <p>In the below screenshot, words आकर्षण and विज्ञापन not follow Indic orthographic syllable definition in some of the browsers.</p>
     <br />
     <img src="images/hyphen.jpg" width="537" height="227" alt="Example of Line breaking" /> </section>
-      <section>
+    
+    
+      <section id="h_guiding_principles_line_breaking_indian_languages">
     <h3>Guiding principles of Line breaking for Indian languages</h3>
     <p>In Indic writing system , it is preferred that line breaks at word boundaries ,if required following principles may be adhered :</p>
     <p><b>Rule 1:</b> New line cannot begin with following symbols/Punctuation marks. Also these should be retain with the associated text</p>
@@ -816,16 +857,24 @@ table.simple {
     <p>“100.00” or “10,000”, nor in “12:59”</p>
   </section>
     </section>
-<section>
+    
+    
+    
+<section id="h_requirements_for_indic_layout">
       <h2>Requirements for Indic Layout</h2>
-      <section>
+      
+      
+      <section id="h_initial_letter_styling">
     <h3>Initial letter styling</h3>
      <p>Drop initial is a typographic effect emphasizing the initial letter(s) of a block element with a presentation similar to a 'floated' element.</p>
-    <section>
+     
+     
+    <section id="h_selecting_initial_letters">
     <h4>Selecting initial letters</h4>
     
     <p>The drop initial letter in Indic scripts must be selected on the basis of orthographic syllables, rather than individual letter forms (see an example at the end of section 3, Text segmentation). A detailed definition of Indic syllables can be found in section 2, Indic Syllable boundaries.In Indian languages the size of the Initial Letter is determined by the number of the lines between top line of the syllable and lowest bit in the orthographic Indic syllable cluster where subjoined consonant and other diacritics  appears.</p></section>
-      <section>
+    
+      <section id="h_typical_drop_initial_usage_in_indic_scripts">
     <h4>Typical drop initial usage in Indic scripts</h4>
     <p>Most of the Indic drop initial letters in magazines and newspapers use 2 to 4 line drops. Some examples are shown below.</p>
       <figure> <img src="images/dropcap-example2.png"/> 
@@ -833,11 +882,6 @@ table.simple {
         </figure>
     <p>In examples of this kind, reference points on the drop cap must align precisely with reference points in the text. In Indic scripts the top reference point is the hanging base line for those scripts that have one, and the bottom alignment point is the text after -edge.</p>
      <p>Alignment of the top line of the non-highlighted characters is at the top of the thicker top line of the initial letter is commonly used in India.In some examples top lines of the initial letter and the following letters don't touch. This is due to variable technology/formats used by the publishers. It is preferred that both the top lines of Initial letter and neighbouring text should touch.</p>
-    </section>
-    
-    
-    
-    
     
        <p>Here are some additional  examples of initial highlighted letter and drop letter based on the Indic syllable definition. In Devanagari the hanging baseline may be preferred as an alignment point. In that case the primary connection point connects the text-after-edge of the initial letter with the text-after-edge of the nth line, but the secondary connection point connects the hanging baselines of the initial letter and the initial line. The drop initial effect may also be used for writing systems which use different alignment strategies. </p>
             
@@ -875,33 +919,49 @@ The part from the hanging baseline and the ascent of the Initial letter may foll
    <ul>
    <li> ¼ height of the total Drop Cap Height projected or ascended above the ascent of the first-line</li>
    <li>¾ of the total Drop Cap Height occupied or descended from ascent of first line or X1 to descent of the last line or line XN.</li>
+       </ul>
+       </section>
        
-                <h3>Initial Letter box formatting in Indian languages</h3>
+       <section id="h_initial_letter_box_formatting">
+                <h4>Initial Letter box formatting in Indian languages</h4>
         <p>The Indian publishers commonly used different height of the boxes and sizes of the characters. But it is proposed that the syllable with in the box is centre-aligned with reference to box parameters as shown in the figure below :</p>
        <figure> <img  src="images/initial-letter-box.png" alt="examples of Indic Initial letters within box" />
           <figcaption>Examples of Indic Initial letters within box</figcaption>
         </figure>
-   </ul>
+   </section>
   </section>
+ </section>
  
-      <section>
+ 
+ 
+      <section id="h_letter_spacing">
    
     <h3>Letter Spacing</h3>
     <p>In styling issues like horizontal spacing, the spacing between characters like C E R T I F I C A T E, the space is given between the every character in case of English. But in case of Indian language, the space needs to be introduced after each syllable for correct representation.</p>
     <p>For letter spacing in Indian languages it is recommended that spacing should follow Indic orthographic syllable definition. </p>
     <p>Here is the some examples of letter spacing that based on definition :</p>
-    1.	अं त र्रा ष्ट्री य क र ण
-    2.	स्वा ग त म्
-    3.	सु स ज्जि त
-    4.	स म्प्र ति</section>
-      <section>
+    <ol>
+    <li>अं त र्रा ष्ट्री य क र ण</li>
+    <li>स्वा ग त म्</li>
+    <li>सु स ज्जि त</li>
+    <li>स म्प्र ति</li>
+    </ol>
+    </section>
+    
+    
+      <section id="h_vertical_arrangements_of_characters">
     <h3>Vertical arrangements of characters</h3>
     <p>In vertical arrangement of characters writing each character on a new line may not be suitable in Indian languages. The vertical arrangements of characters are sometimes used in Indian texts. In order to form correct arrangements, it is preferred to follow tailored grapheme cluster approach.
           Variations of vertical arrangement of the characters in Hindi is represent below :</p>
+          
+     <section id="h_variations_in_vertical_arrangements">
     <h4>Variations in vertical arrangements</h4>
     <figure> <img src="images/vert2.jpg" width="608" height="250" alt="Example of Vertical arrangements in Hindi" />
           <figcaption>Variations in vertical arrangements</figcaption>
         </figure>
+        </section>
+        
+     <section id="h_vertical_representation_of_word"   
     <h4>Vertical representation of the word 'स्वागतम्' based on Indic orthographic syllable definition:</h4>
     <table class="tab-format1">
           <tr>
@@ -917,8 +977,12 @@ The part from the hanging baseline and the ascent of the Initial letter may foll
         <td><strong>म्</strong></td>
       </tr>
         </table>
+        </section>
   </section>
-      <section>
+  
+  
+  
+      <section id="h_collation">
     <h3>Collation</h3>
     <p>Collation is one of the most important features for Indic languages . It determines the order in which a given culture indexes its characters. This is best seen in a dictionary sorting order where for easy search words are sorted and arranged in a specific order. Within a given script, each allo-script may have a different sort-order. Thus in Hindi the conjunct glyph क्ष is sorted along with क , since the first letter of that conjunct is क and on a similar principle ज्ञ is sorted along with ज . The same is not the case with Marathi and Nepali which admit a different sort order.</p>
     <p>Different scripts admit different sort orders and for all high
@@ -1124,12 +1188,15 @@ The part from the hanging baseline and the ascent of the Initial letter may foll
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
+              <td>&nbsp;</td>
             </tr>
       </table>
         </div>
   </section>
     </section>
-<section>
+    
+    
+<section id="h_contributors">
       <h2>Contributors</h2>
       <div class="tab-format1">
     <table>
