@@ -5,168 +5,6 @@
     <meta charset="utf-8">
     <script src='http://www.w3.org/Tools/respec/respec-w3c-common'
             async class='remove'></script>
-    <style type="text/css">
-@import url(http://fonts.googleapis.com/earlyaccess/notosansdevanagari.css);
-:lang(hi) {
-	font-family:"Devanagari MT", "Kokila", "Noto Sans Devanagari", "Devanagari Sangam MN", Mangal, sans-serif;
-}
-.TableGen {
-	margin:0px;
-	padding:0px;
-	width:70%;
-	box-shadow: 10px 10px 5px #888888;
-	border:1px solid #000000;
-}
-.TableGen table {
-	width:100%;
-	height:100%;
-	margin:0px;
-	padding:0px;
-}
-.TableGen tr:nth-child(odd) {
-	background-color:#BBDDFF;
-}
-.TableGen tr:nth-child(even) {
-	background-color:#ffffff;
-}
-.TableGen td {
-	vertical-align:middle;
-	border:1px solid #000000;
-	border-width:0px 1px 1px 0px;
-	text-align:left;
-	font-size:18px;
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight:normal;
-	color:#000000;
-}
-.TableGen tr:last-child td {
-	border-width:0px 1px 0px 0px;
-}
-.TableGen tr td:last-child {
-	border-width:0px 0px 1px 0px;
-}
-.TableGen tr:last-child td:last-child {
-	border-width:0px 0px 0px 0px;
-}
-.TableGen tr:first-child td {
-	background-color:#0080C0;
-	border:0px solid #000000;
-	text-align:center;
-	border-width:0px 0px 1px 1px;
-	font-size:18px;
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight:bold;
-	color:#ffffff;
-}
-.TableGen tr:first-child:hover td {
-	background-color:#0080C0;
-}
-.TableGen tr:first-child td:first-child {
-	border-width:0px 0px 1px 0px;
-}
-.TableGen tr:first-child td:last-child {
-	border-width:0px 0px 1px 1px;
-}
-.tab-format1 table {
-	border:1px solid #000000;
-	border-width:1px 1px 1px 1px;
-	padding:2px;
-}
-.tab-format1 td {
-	vertical-align:middle;
-	border:1px solid #000000;
-	border-width:1px 1px 1px 1px;
-	text-align:left;
-	padding:5px;
-}
-em.rfc2119 {
-	text-transform:     lowercase;
-	font-variant:       small-caps;
-	font-style:         normal;
-	color:              #900;
-}
-h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym, h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
-	border: none;
-}
-dfn {
-	font-weight:    bold;
-}
-a.internalDFN {
-	color:  inherit;
-	border-bottom:  1px solid #99c;
-	text-decoration:    none;
-}
-a.externalDFN {
-	color:  inherit;
-	border-bottom:  1px dotted #ccc;
-	text-decoration:    none;
-}
-a.bibref {
-	text-decoration:    none;
-}
-cite .bibref {
-	font-style: normal;
-}
-code {
-	color:  #C83500;
-}
-/* --- TOC --- */
-.toc a, .tof a {
-	text-decoration:    none;
-}
-a .secno, a .figno {
-	color:  #000;
-}
-ul.tof, ol.tof {
-	list-style: none outside none;
-}
-.caption {
-	margin-top: 0.5em;
-	font-style:   italic;
-}
-/* --- TABLE --- */
-table.simple {
-	border-spacing: 0;
-	border-collapse:    collapse;
-	border-bottom:  3px solid #005a9c;
-}
-.simple th {
-	background: #005a9c;
-	color:  #fff;
-	padding:    3px 5px;
-	text-align: left;
-}
-.simple th[scope="row"] {
-	background: inherit;
-	color:  inherit;
-	border-top: 1px solid #ddd;
-}
-.simple td {
-	padding:    3px 10px;
-	border-top: 1px solid #ddd;
-}
-.simple tr:nth-child(even) {
-	background: #f0f6ff;
-}
-/* --- DL --- */
-.section dd > p:first-child {
-	margin-top: 0;
-}
-.section dd > p:last-child {
-	margin-bottom: 0;
-}
-.section dd {
-	margin-bottom:  1em;
-}
-.section dl.attrs dd, .section dl.eldef dd {
-	margin-bottom:  0;
-}
- @media print {
-.removeOnSave {
-	display: none;
-}
-}
-</style>
     <script class="remove">
       var respecConfig = {
           // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
@@ -288,6 +126,7 @@ table.simple {
 						}
       };
     </script>
+	<link rel="stylesheet" href="local.css" type="text/css" />
     </head>
     <body id="respecDocument" role="document" class="h-entry">
 <div id='abstract'>
@@ -309,8 +148,7 @@ table.simple {
     <h2>Indian language complexities</h2>
     <p> India has large linguistic diversity with 22 constitutionally recognized languages and 12 scripts.This document is currently focused on the Devanagari script. The expectation is that over time its scope will widen to cover additional major scripts from the list below.</p>
     <p>The mapping between languages and scripts is complex. Multiple languages may have common scripts, while a language can be  written in multiple scripts. Each language and script is unique in nature and cannot be easily replicated, even if they share common characteristics. The orthographic changes may also occur in some languages and adoption of new orthography is a gradual process, thus posing additional challenges.</p>
-    <div class="tab-format1">
-          <table  class="tab-format1">
+          <table  class="tab-format">
         <tr>
               <td>Serial No.</td>
               <td>Language</td>
@@ -427,7 +265,6 @@ table.simple {
               <td>Devanagari, Perso-Arabic</td>
             </tr>
       </table>
-        </div>
     <p>The scripts of South Asia share so many common features that a side-by-side comparison
           of a few will often reveal structural similarities even in the modern letter forms. They are all
           abugidas in which most symbols stand for a consonant plus an inherent vowel (usually the sound /a/).The North Indian branch of scripts was, like Brahmi itself, mainly used to write Indo-European languages such as Pali and Sanskrit, and eventually the Hindi, Bengali, and Gujarati
@@ -495,8 +332,7 @@ table.simple {
           
           <section id="h_hindi_consonant_set">
           <h5>Consonant set</h5>
-          <div class="tab-format1">
-        <table>
+        <table class="tab-format">
               <tr>
             <td>क</td>
             <td>क़ </td>
@@ -554,12 +390,11 @@ table.simple {
             <td>ह </td>
           </tr>
             </table>
-            </div>
       </section>
             
             <section id="h_hindi_vowel_set">
         <h5>Vowel set</h5>
-        <table>
+        <table class="tab-format">
               <tr>
             <td>अ</td>
             <td>आ </td>
@@ -580,7 +415,7 @@ table.simple {
             
             <section id="h_hindi_modifiers">
         <h5>Modifiers</h5>
-        <table>
+        <table class="tab-format">
               <tr>
             <td> ं -    Anuswara </td>
             <td>Anuswara,    an archinasal, is denoted by a dot  above    the letter after which it is to be pronounced.
@@ -603,7 +438,7 @@ table.simple {
             
             <section id="h_hindi_matras">
         <h5>Matras</h5>
-        <table>
+        <table class="tab-format">
               <tr>
             <td>ा </td>
             <td>ि </td>
@@ -675,7 +510,7 @@ table.simple {
       <section id="h_abnf_syllabe_definition_use_cases_hindi">
     <h3>Various Use cases of ABNF based Indic orthographic syllable definition for Hindi language as example</h3>
     <p><strong>Rule 1 : V[m]</strong></p>
-    <div class="tab-format1">
+    <div>
           <table  class="tab-format">
         <tr>
               <td>Sl. No.</td>
@@ -963,7 +798,7 @@ The part from the hanging baseline and the ascent of the Initial letter may foll
         
      <section id="h_vertical_representation_of_word"   
     <h4>Vertical representation of the word 'स्वागतम्' based on Indic orthographic syllable definition:</h4>
-    <table class="tab-format1">
+    <table class="tab-format">
           <tr>
         <td><strong>स्वा</strong></td>
       </tr>
@@ -994,8 +829,7 @@ The part from the hanging baseline and the ascent of the Initial letter may foll
           .</p>
     <p>The order(left to right) as given below is pertinent to sorting by a computer program and is compliant
           with CLDR as laid down by Unicode.</p>
-    <div class="tab-format1">
-          <table>
+          <table class="tab-format">
         <tr>
               <td> ़ <br />
             \u093C </td>
@@ -1158,10 +992,9 @@ The part from the hanging baseline and the ascent of the Initial letter may foll
               <td></td>
             </tr>
       </table>
-        </div>
+
     <p>Following is the sort order of Consonant 'क'</p>
-    <div class="tab-format1">
-          <table>
+          <table class="tab-format">
         <tr>
               <td>क</td>
               <td>कँ </td>
@@ -1191,15 +1024,13 @@ The part from the hanging baseline and the ascent of the Initial letter may foll
               <td>&nbsp;</td>
             </tr>
       </table>
-        </div>
   </section>
     </section>
     
     
 <section id="h_contributors">
       <h2>Contributors</h2>
-      <div class="tab-format1">
-    <table>
+    <table class="tab-format">
           <tr>
         <td><strong>Serial No.</strong></td>
         <td><strong>Name</strong></td>
@@ -1272,7 +1103,6 @@ The part from the hanging baseline and the ascent of the Initial letter may foll
         <td>University of Mysore</td>
       </tr>
         </table>
-  </div>
     </section>
 </body>
 </html>
