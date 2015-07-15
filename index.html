@@ -130,20 +130,32 @@
     </head>
     <body id="respecDocument" role="document" class="h-entry">
 <div id="abstract">
-      <p>This document describes the basic requirements for Indian Languages layout for display purpose. It discusses some of the major layout requirements in first letter pseudo-element, vertical arrangements of characters, letter spacing, text segmentation, line breaking and collation rules in Indic languages. </p>
-      <p>The minimal requirements presented in this document for  Indian languages text layout will also be used in E-publishing and CSS Standard. This documents covers major issues of e-content in Indian languages in order to  create standardize format of text layout to address storage, rendering  problems, vertical writing, letter spacing, collation, line breaking etc.</p>
-      <p>It also describes the definition of ABNF(Augmented Backus–Naur Form)
-    based valid segmentation-Indic orthographic syllable in order to get the proper display in the browsers. The text segmentation[[!UAX29]] and line breaking  [[!UAX14]] algorithms are considered in detail. The CSS & digital publications standards will benefit from this document.</p>
+      <p>This document describes the basic requirements for Indic script layout and text support on the Web and in Digital Publications. These requirements provide information for Web technologies such as CSS, HTML, and SVG about how to support users of Indic scripts. The current document focuses on Devanagari, but there are plans to widen the scope to encompass additional Indian scripts as time goes on.</p>
   </div>
 <div id="sotd">
       <p>This document describes the basic requirements for Indic script layout and text support on the Web and in eBooks. These requirements provide information for Web technologies such as CSS, HTML and SVG about how to support users of Indic scripts.  The current document focuses on Devanagari, but there are plans to widen the scope to encompass additional Indian scripts as time goes on. </p>
       <p>The editor's draft of this document is being developed by the <a href="http://www.w3.org/International/groups/indic-layout/">Indic Layout Task Force</a>, part of the W3C <a href="http://www.w3.org/International/ig/">Internationalization Interest Group</a>. It is published by the <a href="http://www.w3.org/International/core/">Internationalization Working Group</a>. The end target for this document is a Working Group Note.</p>
+    <div class="note">
+    <p data-lang="en" style="font-weight: bold; font-size: 120%">Sending comments on this document</p>
+  	<p data-lang="en">If you wish to make comments regarding this document, please raise them as <a href="https://github.com/w3c/ilreq/issues" style="font-size: 120%;">github issues</a> against the <a href="http://www.w3.org/TR/2015/WD-ilreq-20150721/" style="font-size: 120%">latest dated version in /TR</a>. Only send comments by email if you are unable to raise issues on github (see links below).   All comments are welcome.</p>
+  	<p data-lang="en">To make it easier to track comments, please raise separate issues or emails for each comment, and point to the section you are commenting on&nbsp; using  a URL for the dated version of the document.</p>
+    </div>
     </div>
     
     
 <section id="h_introduction">
       <h2>Introduction</h2>
       
+  <section id="h_about_this_document">
+    <h2>About this document</h2>
+      <p>This document describes the basic requirements for Indian Languages layout for display purpose. It discusses some of the major layout requirements in first letter pseudo-element, vertical arrangements of characters, letter spacing, text segmentation, line breaking and collation rules in Indic languages.</p>
+      <p>The current document focuses on Devanagari, but there are plans to widen the scope to encompass additional Indian scripts as time goes on.</p>
+      <p>The minimal requirements presented in this document for  Indian languages text layout will also be used in E-publishing and CSS Standard. This documents covers major issues of e-content in Indian languages in order to  create standardize format of text layout to address storage, rendering  problems, vertical writing, letter spacing, collation, line breaking etc.</p>
+      <p>It also describes the definition of ABNF(Augmented Backus–Naur Form)
+    based valid segmentation-Indic orthographic syllable in order to get the proper display in the browsers. The text segmentation[[!UAX29]] and line breaking  [[!UAX14]] algorithms are considered in detail. The CSS & digital publications standards will benefit from this document.</p>
+    </section>
+    
+    
   <section id="h_indian_language_complexities">
     <h2>Indian language complexities</h2>
     <p> India has large linguistic diversity with 22 constitutionally recognized languages and 12 scripts.This document is currently focused on the Devanagari script. The expectation is that over time its scope will widen to cover additional major scripts from the list below.</p>
