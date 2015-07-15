@@ -7,9 +7,6 @@
             async class='remove'></script>
     <style type="text/css">
 @import url(http://fonts.googleapis.com/earlyaccess/notosansdevanagari.css);
-
-del { display: block; color: #ccc; }
-
 :lang(hi) {
 	font-family:"Devanagari MT", "Kokila", "Noto Sans Devanagari", "Devanagari Sangam MN", Mangal, sans-serif;
 }
@@ -297,7 +294,7 @@ table.simple {
       <p>This document describes the basic requirements for Indian Languages layout for display purpose. It discusses some of the major layout requirements in first letter pseudo-element, vertical arrangements of characters, letter spacing, text segmentation, line breaking and collation rules in Indic languages. </p>
       <p>The minimal requirements presented in this document for  Indian languages text layout will also be used in E-publishing and CSS Standard. This documents covers major issues of e-content in Indian languages in order to  create standardize format of text layout to address storage, rendering  problems, vertical writing, letter spacing, collation, line breaking etc.</p>
       <p>It also describes the definition of ABNF(Augmented Backus–Naur Form)
-    based valid segmentation-Indic syllable in order to get the proper display in the browsers. The text segmentation[[!UAX29]] and line breaking  [[!UAX14]] algorithms are considered in detail. The CSS & digital publications standards will benefit from this document. 
+    based valid segmentation-Indic orthographic syllable in order to get the proper display in the browsers. The text segmentation[[!UAX29]] and line breaking  [[!UAX14]] algorithms are considered in detail. The CSS & digital publications standards will benefit from this document. 
   </section>
 <section id='sotd'>
       <p>This document describes the basic requirements for Indic script layout and text support on the Web and in eBooks. These requirements provide information for Web technologies such as CSS, HTML and SVG about how to support users of Indic scripts.  The current document focuses on Devanagari, but there are plans to widen the scope to encompass additional Indian scripts as time goes on. </p>
@@ -611,19 +608,19 @@ table.simple {
   </section>
     </section>
 <section>
-      <h2>Indic Syllable boundaries (ABNF Valid segmentation-Proposed solution for layout issues in Indian languages)</h2>
+      <h2>Indic orthographic syllable boundaries(ABNF Valid segmentation-Proposed solution for layout issues in Indian languages)</h2>
       <section>
     <h3>Need for ABNF valid segmentation</h3>
-    <p>ABNF Valid Segmentation  based  Indic syllable definition is provided here for correct and standardized representation of Indian languages layout. This will address various issues mentioned in the following sections. </p>
+    <p>ABNF Valid Segmentation  based  Indic orthographic syllable definition is provided here for correct and standardized representation of Indian languages layout. This will address various issues mentioned in the following sections. </p>
     <p>This definition will be useful in order to get the uniform display of Indic layout in the browsers, applications, Digital publishing etc.</p>
   </section>
       <section>
-    <h3>ABNF based definition of Indic syllable</h3>
+    <h3>ABNF based definition of Indic orthographic syllable</h3>
     <p>Augmented Backus–Naur Form (ABNF) is a meta-language based on Backus–Naur Form (BNF), but consisting of its own syntax and derivation rules. The motive principle for ABNF is to describe a formal system of a language to be used as a bidirectional communications protocol.</p>
     <p><b>V[m] |{CH}C[v][m]|CH </b><br />
       <br />
   <br />
-          The linguistic definition of Indic syllable has been mapped to ABNF(Augmented Backus–Naur Form) for the purpose of text segmentation, line breaking , drop letter, letter spacing in horizontal text and vertical text representation. The definition has been elaborated , taking Hindi as an example.</p>
+          The linguistic definition of Indic orthographic syllable has been mapped to ABNF(Augmented Backus–Naur Form) for the purpose of text segmentation, line breaking , drop letter, letter spacing in horizontal text and vertical text representation. The definition has been elaborated , taking Hindi as an example.</p>
     <p>The definition is a combination of 3 rules :</p>
     <p>Rule 1 : V[m]</p>
     <p>Rule 2 : {CH}C[v][m]</p>
@@ -644,7 +641,7 @@ table.simple {
     <br />
     {} - The enclosed item/items occurs zero or repeated multiple times </section>
       <section>
-    <h3>Various Use cases of ABNF based Indic Syllable definition for Hindi language as example</h3>
+    <h3>Various Use cases of ABNF based Indic orthographic syllable definition for Hindi language as example</h3>
     <p><b>Rule 1 : V[m]</b></p>
     <div class="tab-format1">
           <table  class="tab-format">
@@ -761,40 +758,37 @@ table.simple {
     </section>
 <section>
       <h2>Text segmentation</h2>
-    <p>A string of Unicode-encoded text often needs to be broken up into text elements programmatically. Common examples of text elements include what users think of as characters, words, lines (more precisely, where line breaks are allowed), and sentences. The precise determination of text elements may vary according to orthographic conventions for a given script or language. </p>
-    <p>The goal of matching user perceptions cannot always be met exactly because the text alone does not always contain enough information to unambiguously decide boundaries. For example, the period (U+002E FULL STOP) is used ambiguously, sometimes for end-of-sentence purposes, sometimes for abbreviations, and sometimes for numbers. In most cases, however, programmatic text boundaries can match user perceptions quite closely, although sometimes the best that can be done is not to surprise the user. </p>
-      <p>Word boundaries are used in a number of different contexts. The most familiar ones are selection (double-click mouse selection, or “move to next word” control-arrow keys), and “whole word search” for search and replace. They are also used in database queries, to determine whether elements are within a certain number of words of one another.    </p>
-      <p>Some special sentence boundaries are used, like the double purnaviram/danda, possibly with numbers (as in Sanskrit text, shlokas etc.). Where the text contains a Devanagari phrase separator called danda or purnaviram (।) and double danda (।। used to mark end of a verse), in some  browsers a final word is selected with the purnaviram on double-click, while in other browsers the danda is selected  separately. It is recommended that  a line should not  begin with purnaviram/danda or double danda. In this way the properties of danda should be same as the properties of full stop or similar punctuation marks.</p>
-      <p>Grapheme cluster boundaries are   	important for collation, regular expressions, UI   	interactions (such as mouse selection, arrow key movement, backspacing),   	segmentation for vertical text, identification of boundaries for   	initial-letter styling, and counting “character” positions within text. [UAX29]     User-percieved character boundaries  are  based on tailored grapheme cluster boundaries to conform to the Indic syllable definition.<br />
+      <p>A string of Unicode-encoded text often needs to be broken up into text elements programmatically. Common examples of text elements include what users think of as characters, words, lines (more precisely, where line breaks are allowed), and sentences. The precise determination of text elements may vary according to orthographic conventions for a given script or language. The goal of matching user perceptions cannot always be met exactly because the text alone does not always contain enough information to unambiguously decide boundaries. For example, the period (U+002E FULL STOP) is used ambiguously, sometimes for end-of-sentence purposes, sometimes for abbreviations, and sometimes for numbers. In most cases, however, programmatic text boundaries can match user perceptions quite closely, although sometimes the best that can be done is not to surprise the user. Word boundaries are used in a number of different contexts. The most familiar ones are selection (double-click mouse selection, or “move to next word” control-arrow keys), and “Whole Word Search” for search and replace. They are also used in database queries, to determine whether elements are within a certain number of words of one another .
+    Some special sentence boundaries like the double poorna virama, possibly with numbers (as in Sanskrit text, shlokas etc.) Grapheme cluster boundaries are   	important for collation, regular expressions, UI   	interactions (such as mouse selection, arrow key movement, backspacing),   	segmentation for vertical text, identification of boundaries for   	Initial-letter styling, and counting “character” positions within text. [[!UAX29]]</p>
+      <p>Solution for word boundaries:<br />
+    User-percieved characters boundaries  should be based on tailored Grapheme Cluster Boundaries to conform Indic orthographic syllable definition <br />
   </p>
-      <p>At the sub-word level, the text segmentation should be done using Indic orthographic syllables as the basic unit. An orthographic syllable is described in the earlier section on Indic syllable boundaries, and does not necessarily coincide with a phonetic syllable. Essentially, a syllable includes a base consonant and any combination of the following characters in the text stream:</p>
-      <ul>
-        <li>sequences of consonants preceded by virama (i.e. conjuncts).</li>
-        <li>vowel signs</li>
-        <li>visarga, anusvara or candrabindu.</li>
-      </ul>
-      <p>For example, Indic script behavior in initial letter styling is based on syllables, rather than individual letter forms. The  figure  below shows an example of a drop intial in Hindi.</p> 
+      <p>In case of Devanagari phrase separator called Danda or purnaviram (।) and double danda (।।: used to mark end of the verse),In some of the browsers ending word is selected with purnaviram on double-click while in some browsers Danda is selected as a separate. It is recommended that  line should not  begin with purnaviram/Danda and double danda. So the properties of Danda should be same as the properties of FullStop or other punctuation marks so that new line should not begin with Danda and double danda.</p>
+      <p>For others characters, the text segmentation should be done as Indic orthographic syllable.</p>
+      <p>Indic script behavior in initial letter styling is based on syllables, rather than individual letter forms.</p> 
       <img src="images/drop-letter1.jpg" />
 
-<p> In the first word of the paragraph, स्कूल ('skūl'), the sequence of characters is stored in memory is as follows:</p>
-<p>स ‎U+0938 DEVANAGARI LETTER SA<br>
-&nbsp;् ‎U+094D DEVANAGARI SIGN VIRAMA <br>
-क ‎U+0915 DEVANAGARI LETTER KA<br>
-&nbsp;ू ‎U+0942 DEVANAGARI VOWEL SIGN UU<br>
-ल ‎U+0932 DEVANAGARI LETTER LA</p>
-<p>There are two orthographic syllables in this word: SA+VIRAMA+KA+UU and LA.  Note, however, that there are three Unicode grapheme clusters here: SA+VIRAMA, KA+UU and LA.</p>
+<p>The above Figure  shows an example of a drop intial in Hindi. In the first word of the paragraph, स्कूल ('skūl'), the sequence of characters is stored in memory is as follows:</p>
+<img src="images/initial-letter-ex.jpg" />
+<p>There are two syllables in this word: SA+VIRAMA+KA+UU and LA.  Note, however, that there are three Unicode grapheme clusters here: SA+VIRAMA, KA+UU and LA.</p>
 <p>Styling is done on the basis of the whole orthographic syllable, not the first character, nor even the first grapheme. </p>
-</section>
+<p>A syllable includes a base consonant and any combination of the following characters in the text stream:</p>
+<ul>
+<li>sequences of consonants preceded by virama (i.e. conjuncts).</li>
+<li>vowel signs</li>
+<li>visarga, anusvara or candrabindu.</li>
+</ul>
+    </section>
 <section>
-  <h2>Line breaking</h2>
+      <h2>Line breaking</h2>
       <p>When inline-level content is laid out into lines, it is broken across line boxes. Such a break is called a line break. In most  writing systems, in the absence of hyphenation a line break occurs only at word  boundaries. Many writing systems use spaces or punctuation to explicitly  separate words, and line break opportunities can be identified by these  characters. Line  breaking, also known as word wrapping, is the process of breaking a section of  text into lines such that it will fit in the available width of a page, window  or other display area. </p>
       <section>
     <h3>Hyphenation</h3>
     <p> There are different cases of hyphenation, some of the cases are given below :</p>
     <p><b>Case 1 :</b> Hyphens are commonly used in Copulative compounds words in Hindi language. Hindi has both prefixes and suffixes which are joined to words with a hyphen.<br />
-        <h2>नर-नारी, लाभ- हानि, माता-पिता, ऊंच - नीच</h2>
-    <p><b>Case 2:</b> Single word can breaks at the end of the line at Indic syllable level using hyphen </p>
-    <p>In the below screenshot, words आकर्षण and विज्ञापन not follow Indic syllable definition in some of the browsers.</p>
+        <h2>नर- नारी, लाभ- हानि, माता-पिता, ऊंच - नीच</h2>
+    <p><b>Case 2:</b> Single word can breaks at the end of the line at Indic orthographic syllable level using hyphen </p>
+    <p>In the below screenshot, words आकर्षण and विज्ञापन not follow Indic orthographic syllable definition in some of the browsers.</p>
     <br />
     <img src="images/hyphen.jpg" width="537" height="227" alt="Example of Line breaking" /> </section>
       <section>
@@ -811,7 +805,7 @@ table.simple {
           <li>Repetition of punctuation marks such as semicolon with closing brackets, Semicolon with single/ Double quotes , Closing brackets with commas/Semicolon etc</li>
           <li>Mathematical operators</li>
         </ul>
-    <p><b>Rule 2: </b>The definition of Indic syllable may be used to break the line and a hyphen should be at the breaking point so that word can be read intuitively</p>
+    <p><b>Rule 2: </b>The definition of Indic orthographic syllable may be used to break the line and a hyphen should be at the breaking point so that word can be read intuitively</p>
     <p><b>Rule 3: </b>The hyphenated words can be broken at the hyphen e.g.:</p>
     <ul>
           <li>नर-नारी should be treated as:</li>
@@ -826,23 +820,28 @@ table.simple {
       <h2>Requirements for Indic Layout</h2>
       <section>
     <h3>Initial letter styling</h3>
-    <p>Drop initial is a typographic effect emphasizing the initial letter(s) of a block element with a presentation similar to a 'floated' element.</p>
+     <p>Drop initial is a typographic effect emphasizing the initial letter(s) of a block element with a presentation similar to a 'floated' element.</p>
     <section>
     <h4>Selecting initial letters</h4>
     
-    <p>The drop initial letter in Indic scripts must be selected on the basis of orthographic syllables, rather than individual letter forms (see an example at the end of section 3, Text segmentation). A detailed definition of Indic syllables can be found in section 2, Indic Syllable boundaries.</p>
-    </section>
-    
-    <section>
+    <p>The drop initial letter in Indic scripts must be selected on the basis of orthographic syllables, rather than individual letter forms (see an example at the end of section 3, Text segmentation). A detailed definition of Indic syllables can be found in section 2, Indic Syllable boundaries.In Indian languages the size of the Initial Letter is determined by the number of the lines between top line of the syllable and lowest bit in the orthographic Indic syllable cluster where subjoined consonant and other diacritics  appears.</p></section>
+      <section>
     <h4>Typical drop initial usage in Indic scripts</h4>
     <p>Most of the Indic drop initial letters in magazines and newspapers use 2 to 4 line drops. Some examples are shown below.</p>
-    <p>--- add pictures here from page one-two of the pdf ---</p>
+      <figure> <img src="images/dropcap-example2.png"/> 
+          <figcaption>Examples of Indic Initial letters</figcaption>
+        </figure>
     <p>In examples of this kind, reference points on the drop cap must align precisely with reference points in the text. In Indic scripts the top reference point is the hanging base line for those scripts that have one, and the bottom alignment point is the text after -edge.</p>
+     <p>Alignment of the top line of the non-highlighted characters is at the top of the thicker top line of the initial letter is commonly used in India.In some examples top lines of the initial letter and the following letters don't touch. This is due to variable technology/formats used by the publishers. It is preferred that both the top lines of Initial letter and neighbouring text should touch.</p>
     </section>
     
     
-    <p>Here are some additional  examples of initial highlighted letter and drop letter based on the Indic syllable definition. In Devanagari the hanging baseline may be preferred as an alignment point. In that case the primary connection point connects the text-after-edge of the initial letter with the text-after-edge of the nth line, but the secondary connection point connects the hanging baselines of the initial letter and the initial line. The drop initial effect may also be used for writing systems which use different alignment strategies. </p>
-    <table>
+    
+    
+    
+       <p>Here are some additional  examples of initial highlighted letter and drop letter based on the Indic syllable definition. In Devanagari the hanging baseline may be preferred as an alignment point. In that case the primary connection point connects the text-after-edge of the initial letter with the text-after-edge of the nth line, but the secondary connection point connects the hanging baselines of the initial letter and the initial line. The drop initial effect may also be used for writing systems which use different alignment strategies. </p>
+            
+          <table>
       <tr>
     <td><img src="images/I-letter2.png" alt="Bengali example" /></td>
      <td><img src="images/I-letter3.png" alt="Tamil example"/></td>
@@ -856,18 +855,44 @@ table.simple {
      <td><img src="images/I-letter6.png" alt="Marathi example" width="555" height="255"/></td>
     </tr>
   </table>
-    <p>The remainder of this section describes the detailed rules for placement and alignment of hindi characters with initial letter styling relative to the adjacent text.</p>
-    <p class="note">Detailed rule information to be added here.</p>
-  </figcaption></figure></section>
+  <p>The remainder of this section describes the detailed rules for placement and alignment of hindi characters with initial letter styling relative to the adjacent text.</p>
+  <h3>Indic scripts with hanging baseline</h3>
+  <p>Indian languages which use hanging baseline such as Hindi, Bengali, Gujarati, Marathi, Punjabi etc.
+The part from the hanging baseline and the ascent of the Initial letter may follow the following mechanism  :</p>
+ <figure><img src="images/Hbaseline-rule.png" alt="Rule for hanging baseline">
+          <figcaption>Rule of  Indic script  with hanging baseline</figcaption>
+        </figure>
+       <p>Scripts that have hanging baseline , the hanging baseline of both Initial letter and first line of text should be same aligned.</p>
+<h3>Scripts that don't have hanging baseline such as Kannada, Tamil, Telugu, Malayalam , Odia etc</h3>
+
+   <p>The publishers in India commonly used following rules for such scripts :</p>
+   <ul>
+   <li>The height of the Initial letter is based on the Indic orthographic  syllable described in section 2.</li>
+   <li>Ascent of the first non highlighted line is equal t   o the median/mean line of the Initial letter as shown below :</li>
+   </ul>
+   <img src="images/dropcap-south.png" alt="rule for South Indian languages" />
+   <p>Based on above observations the general rule for South Indian languages  Indian languages scripts  will be :</p>
+   <ul>
+   <li> ¼ height of the total Drop Cap Height projected or ascended above the ascent of the first-line</li>
+   <li>¾ of the total Drop Cap Height occupied or descended from ascent of first line or X1 to descent of the last line or line XN.</li>
+       
+                <h3>Initial Letter box formatting in Indian languages</h3>
+        <p>The Indian publishers commonly used different height of the boxes and sizes of the characters. But it is proposed that the syllable with in the box is centre-aligned with reference to box parameters as shown in the figure below :</p>
+       <figure> <img  src="images/initial-letter-box.png" alt="examples of Indic Initial letters within box" />
+          <figcaption>Examples of Indic Initial letters within box</figcaption>
+        </figure>
+   </ul>
+  </section>
+ 
       <section>
    
     <h3>Letter Spacing</h3>
     <p>In styling issues like horizontal spacing, the spacing between characters like C E R T I F I C A T E, the space is given between the every character in case of English. But in case of Indian language, the space needs to be introduced after each syllable for correct representation.</p>
-    <p>For letter spacing in Indian languages it is recommended that spacing should follow Indic syllable definition. </p>
+    <p>For letter spacing in Indian languages it is recommended that spacing should follow Indic orthographic syllable definition. </p>
     <p>Here is the some examples of letter spacing that based on definition :</p>
-    1.	अं त र्रा ष्ट्री य क र ण<br />
-    2.	स्वा ग त म्<br />
-    3.	सु स ज्जि त<br />
+    1.	अं त र्रा ष्ट्री य क र ण
+    2.	स्वा ग त म्
+    3.	सु स ज्जि त
     4.	स म्प्र ति</section>
       <section>
     <h3>Vertical arrangements of characters</h3>
@@ -877,7 +902,7 @@ table.simple {
     <figure> <img src="images/vert2.jpg" width="608" height="250" alt="Example of Vertical arrangements in Hindi" />
           <figcaption>Variations in vertical arrangements</figcaption>
         </figure>
-    <h4>Vertical representation of the word 'स्वागतम्' based on Indic Syllable definition:</h4>
+    <h4>Vertical representation of the word 'स्वागतम्' based on Indic orthographic syllable definition:</h4>
     <table class="tab-format1">
           <tr>
         <td><strong>स्वा</strong></td>
@@ -1105,7 +1130,7 @@ table.simple {
   </section>
     </section>
 <section>
-  <h2>Contributors</h2>
+      <h2>Contributors</h2>
       <div class="tab-format1">
     <table>
           <tr>
@@ -1173,6 +1198,11 @@ table.simple {
         <td>12</td>
         <td>G. Uma Maheshwar Rao</td>
         <td>University of Hyderabad</td>
+      </tr>
+       <tr>
+        <td>13</td>
+        <td>Dr. Bisembli P. Hemananda</td>
+        <td>University of Mysore</td>
       </tr>
         </table>
   </div>
