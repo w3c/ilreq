@@ -714,7 +714,7 @@
     <section id="h_selecting_initial_letters">
     <h4>Selecting initial letters</h4>
     
-    <p>The drop initial letter in Indic scripts must be selected on the basis of orthographic syllables, rather than individual letter forms (see an example at the end of section 3, Text segmentation). A detailed definition of Indic syllables can be found in section 2, Indic Syllable boundaries.In Indian languages the size of the Initial Letter is determined by the number of the lines between top line of the syllable and lowest bit in the orthographic Indic syllable cluster where subjoined consonant and other diacritics  appears.</p></section>
+    <p>Initial letters are typically a single letter, which can be selected by the ::first-letter pseudo-element. But the drop initial letter in Indic scripts must be selected on the basis of orthographic syllables, rather than individual letter forms (see an example at the end of section 3, Text segmentation). The orthographic syllable may be a single Consonant/Vowel or the combinations of Unicode code points. A detailed definition of Indic syllables can be found in section 2, Indic Syllable boundaries.In Indian languages the size of the Initial Letter is determined by the number of the lines between top line of the syllable and lowest bit in the orthographic Indic syllable cluster where subjoined consonant and other diacritics  appears.</p></section>
     
       <section id="h_typical_drop_initial_usage_in_indic_scripts">
     <h4>Typical drop initial usage in Indic scripts</h4>
@@ -722,10 +722,9 @@
       <figure> <img src="images/dropcap-example2.png" alt="examples of indic initial letters" /> 
           <figcaption>Examples of Indic Initial letters</figcaption>
         </figure>
-    <p>In examples of this kind, reference points on the drop cap must align precisely with reference points in the text. In Indic scripts the top reference point is the hanging base line for those scripts that have one, and the bottom alignment point is the text after -edge.</p>
-     <p>Alignment of the top line of the non-highlighted characters is at the top of the thicker top line of the initial letter is commonly used in India.In some examples top lines of the initial letter and the following letters don't touch. This is due to variable technology/formats used by the publishers. It is preferred that both the top lines of Initial letter and neighbouring text should touch.</p>
-    
-       <p>Here are some additional  examples of initial highlighted letter and drop letter based on the Indic syllable definition. In Devanagari the hanging baseline may be preferred as an alignment point. In that case the primary connection point connects the text-after-edge of the initial letter with the text-after-edge of the nth line, but the secondary connection point connects the hanging baselines of the initial letter and the initial line. The drop initial effect may also be used for writing systems which use different alignment strategies. </p>
+    <p>The Sunken and raised Initial letter are not preffered in Indian languages.In examples of this kind, reference points on the drop cap must align precisely with reference points in the text. In Indic scripts the top reference point is the hanging base line for those scripts that have one, and the bottom alignment point is the text after-edge.</p>
+    <p>Initial letter wrap property is not applicable for Indian languages.No contour-filling is required in Indian languages.</p>
+    <p>Alignment of the top line of the non-highlighted characters is at the top of the thicker top line of the initial letter is commonly used in India.In some examples top lines of the initial letter and the following letters don't touch. This is due to variable technology/formats used by the publishers. It is preferred that both the top lines of Initial letter and neighbouring text should touch.Here are some additional  examples of initial highlighted letter and drop letter based on the Indic syllable definition.</p>
             
       <p class="exampleList"><img src="images/I-letter1.png" alt="Bengali example" /></p>
       <p class="exampleList"><img src="images/I-letter2.png" alt="Punjabi example" /></p>
@@ -739,13 +738,14 @@
   </section>
   
   <section id="h_indic_scripts_with_hanging_baseline">
-  <h4>Indic scripts with hanging baseline</h4>
+  <h4>Alignment of Initial letter of Indic scripts with hanging baseline</h4>
   <p>Indian languages which use hanging baseline such as Hindi, Bengali, Gujarati, Marathi, Punjabi etc.
 The part from the hanging baseline and the ascent of the Initial letter may follow the following mechanism  :</p>
  <figure><img src="images/Hbaseline-rule.png" alt="Rule for hanging baseline">
           <figcaption>Rule of  Indic script  with hanging baseline</figcaption>
         </figure>
-       <p>Scripts that have hanging baseline , the hanging baseline of both Initial letter and first line of text should be same aligned.</p>
+         <p>Where n=h/2</p>
+      <p>In Indic scripts that have hanging baseline, the top alignment point is the hanging baseline, and the bottom alignment point is the text-after-edge and both the Initial letter and first line of text should be same aligned.</p>
       </section>
       
       <section id="h_scripts_without_hanging_baseline">
