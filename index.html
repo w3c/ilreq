@@ -133,7 +133,7 @@
       <p>The editor's draft of this document is being developed by the <a href="https://www.w3.org/International/groups/indic-layout/">Indic Layout Task Force</a>, part of the W3C <a href="https://www.w3.org/International/ig/">Internationalization Interest Group</a>. It is published by the <a href="https://www.w3.org/International/core/">Internationalization Working Group</a>. The end target for this document is a Working Group Note.</p>
     <div class="note">
     <p data-lang="en" style="font-weight: bold; font-size: 120%">Sending comments on this document</p>
-  	<p data-lang="en">If you wish to make comments regarding this document, please raise them as <a href="https://github.com/w3c/ilreq/issues" style="font-size: 120%;">github issues</a> against the <a href="https://www.w3.org/TR/2015/WD-ilreq-20150721/" style="font-size: 120%">latest dated version in /TR</a>. Only send comments by email if you are unable to raise issues on github (see links below).   All comments are welcome.</p>
+  	<p data-lang="en">If you wish to make comments regarding this document, please raise them as <a href="https://github.com/w3c/ilreq/issues" style="font-size: 120%;">github issues</a>. Only send comments by email if you are unable to raise issues on github (see links below).   All comments are welcome.</p>
   	<p data-lang="en">To make it easier to track comments, please raise separate issues or emails for each comment, and point to the section you are commenting on&nbsp; using  a URL for the dated version of the document.</p>
     </div>
     </div>
@@ -146,15 +146,14 @@
     <h2>About this document</h2>
       <p>This document describes the basic requirements for Indian Languages layout for display purpose. It discusses some of the major layout requirements in first letter pseudo-element, vertical arrangements of characters, letter spacing, text segmentation, line breaking and collation rules in Indic languages.</p>
       <p>The current document focuses on Devanagari, but there are plans to widen the scope to encompass additional Indian scripts as time goes on.</p>
-      <p>The minimal requirements presented in this document for  Indian languages text layout will also be used in E-publishing and CSS Standard. This documents covers major issues of e-content in Indian languages in order to  create standardize format of text layout to address storage, rendering  problems, vertical writing, letter spacing, collation, line breaking etc.</p>
-      <p>It also describes the definition of ABNF(Augmented Backus–Naur Form)
-    based valid segmentation-Indic orthographic syllable in order to get the proper display in the browsers. The text segmentation[[!UAX29]] and line breaking  [[!UAX14]] algorithms are considered in detail. The CSS & digital publications standards will benefit from this document.</p>
+      <p>The minimal requirements presented in this document for  Indian languages text layout will also be used in E-publishing and CSS Standard. This document covers major issues of e-content in Indian languages in order to  create standardized format for text layout to address storage, rendering  problems, vertical writing, letter spacing, collation, line breaking, etc.</p>
+      <p>It also describes a set of <abbr title="Augmented Backus–Naur Form">ABNF</abbr>-based rules for valid segmentation of Indic orthographic syllables in order to get the proper display in  browsers. Text segmentation[[!UAX29]] and line breaking  [[!UAX14]] algorithms are considered in detail. Standards for CSS and digital publications will benefit from this document.</p>
     </section>
     
     
   <section id="h_indian_language_complexities">
     <h2>Indian language complexities</h2>
-    <p> India has large linguistic diversity with 22 constitutionally recognized languages and 12 scripts.This document is currently focused on the Devanagari script. The expectation is that over time its scope will widen to cover additional major scripts from the list below.</p>
+    <p> India has large linguistic diversity with 22 constitutionally recognized languages and 12 scripts.This document is currently focused largely on the Devanagari script. The expectation is that over time its scope will widen to cover additional major scripts from the list below.</p>
     <p>The mapping between languages and scripts is complex. Multiple languages may have common scripts, while a language can be  written in multiple scripts. Each language and script is unique in nature and cannot be easily replicated, even if they share common characteristics. The orthographic changes may also occur in some languages and adoption of new orthography is a gradual process, thus posing additional challenges.</p>
           <table  class="tab-format">
         <tr>
@@ -274,12 +273,12 @@
             </tr>
       </table>
     <p>The scripts of South Asia share so many common features that a side-by-side comparison
-          of a few will often reveal structural similarities even in the modern letter forms. They are all
+          of a few will often reveal structural similarities, even in  modern letter forms. They are all
           abugidas in which most symbols stand for a consonant plus an inherent vowel (usually the sound /a/).The North Indian branch of scripts was, like Brahmi itself, mainly used to write Indo-European languages such as Pali and Sanskrit, and eventually the Hindi, Bengali, and Gujarati
           languages, though it was also the source for scripts for non-Indo-European languages such
-          as Tibetan, Mongolian, and Lepcha. The South Indian scripts are also derived from Brahmi and, therefore, share many similarities in structural characteristics. For more details visit [[!South-Asian-Scripts]].</p>
-    <p>The following figure shows the evolution of Indian scripts over a period of times from Brahmi script.</p>
-    <figure> <img src="images/Brahmi.jpg" width="617" height="637" alt="Evolution of Indic Scripts"/>
+          as Tibetan, Mongolian, and Lepcha, as well as many South-East Asian scripts. The South Indian scripts are also derived from Brahmi and, therefore, share many similarities in structural characteristics. For more details visit [[!South-Asian-Scripts]].</p>
+    <p><a href="#fig_script_development"></a> shows the evolution of Indian scripts over a period of time from Brahmi script.</p>
+    <figure id="fig_script_development"> <img src="images/Brahmi.jpg" width="617" height="637" alt="Evolution of Indic Scripts"/>
           <figcaption>Development of Indian Scripts</figcaption>
         </figure>
     For more details visit  [[!Evolution-of-Indic-Scripts]]</section>
@@ -292,7 +291,7 @@
     <section id="h_unicode_and_cldr">
           <h4>Unicode &amp; CLDR</h4>
           <p><dfn id="def_unicode">Unicode</dfn> is the Universal character encoding standard, used for representing text for information processing. Unicode encodes all of the individual characters used for all the written languages of the world. The standards provide information about the character and their use. </p>
-          <p><dfn id="def_cldr">Common Locale Data Repository</dfn> is the largest standard repository of locale data in the world. It is managed by Unicode Consortium. It provides locale data in an XML format for use in computer applications. It facilitates locale-related information sharing among applications regardless of their domains. Its goal is to provide basic linguistic information for diverse “locales” in an open, interoperable form.</p>
+          <p><dfn id="def_cldr">Common Locale Data Repository</dfn> is the largest standard repository of locale data in the world. It is managed by the Unicode Consortium. It provides locale data in an XML format for use in computer applications. It facilitates locale-related information sharing among applications regardless of their domains. Its goal is to provide basic linguistic information for diverse “locales” in an open, interoperable form.</p>
           <p>This data is usable for localizing applications. </p>
           <p>Some examples of the information that CLDR gathers for languages and territories are:</p>
           <ul>
@@ -311,23 +310,23 @@
         
     <section id="h_unicode_normalization">
           <h4>Unicode Normalization</h4>
-          <p>Unicode normalization[[!UAX15]] is a form of text normalization that transforms equivalent sequences of characters into the same representation. Unicode normalization is important in Unicode text processing applications, because it affects the semantics of comparing, searching, and sorting Unicode sequences</p>
-          <p>When a unique representation is required , a normalized form of Unicode text can be used to eliminate unwanted distinctions. The key part of normalization is to provide a unique canonical order for visually non distinct sequences of combining characters.</p>
+          <p>Unicode normalization [[!UAX15]] is a form of text normalization that transforms equivalent sequences of characters into the same representation. Unicode normalization is important in Unicode text processing applications, because it affects the semantics of comparing, searching, and sorting Unicode sequences</p>
+          <p>When a unique representation is required , a normalized form of Unicode text can be used to eliminate unwanted distinctions. The key part of normalization is to provide a unique canonical order for visually non-distinct sequences of combining characters.</p>
           
       <section id="h_canonical_and_compatible_equivalence">
         <h5>Canonical &amp; Compatible Equivalence</h5>
         <p>Unicode contains numerous characters to maintain compatibility with existing standards, some of which are functionally equivalent to other characters or sequences of characters. Because of this, Unicode defines some code point sequences as equivalent. Unicode provides two notions of equivalence: canonical and compatible.</p>
         <p>Canonical equivalence is a form of equivalence that preserves visually and functionally equivalent characters.</p>
-        <p>The following figure shows the canonical equivalence:</p>
-        <figure> <img src="images/can-eq.jpg" width="547" height="83" alt="Canonical equivalence in Hindi" />
+        <p><a href="#fig_canonical_equivalence"></a> shows the canonical equivalence:</p>
+        <figure id="fig_canonical_equivalence"> <img src="images/can-eq.jpg" width="547" height="83" alt="Canonical equivalence in Hindi" />
               <figcaption>Canonical Equivalence</figcaption>
             </figure>
       </section>
       
     </section>
     <section id="h_unicode_code_charts_devanagari">
-          <h4>Unicode Code charts- Devanagari &amp; Devanagari Extended</h4>
-          <p>The following Unicode Character Code chart as per The Unicode Standard, Version 7.0 :</p>
+          <h4>Unicode Code charts - Devanagari &amp; Devanagari Extended</h4>
+          <p>The following Unicode Character Code chart is per The Unicode Standard, Version 7.0 :</p>
         <figure> <img src="images/code-chart.jpg" width="549" height="777" alt="Devanagari and Devanagari extended Code Chart" />
               <figcaption>Unicode Devanagari and Devanagari extended Code Chart</figcaption>
             </figure>
@@ -430,12 +429,12 @@
                   This    falls under Nasal category.</td>
           </tr>
               <tr>
-            <td>ँ -Chandrabindu </td>
+            <td>ँ - Chandrabindu </td>
             <td>Candrabindu    is pure nasalization as air comes from the nose. It is denoted by a breve    with a dot superposed above  the letter    after which it is to be pronounced. This falls under Nasal category. </td>
           </tr>
               <tr>
             <td>ः -    Visarga </td>
-            <td>Visarga(sending forth),    denoted by two dots placed one above the other.</td>
+            <td>Visarga (sending forth),    is denoted by two dots placed one above the other.</td>
           </tr>
               <tr>
             <td>ऽ - Avagraha</td>
@@ -466,13 +465,13 @@
             
             <section id="h_hindi_halant">
           <h5>Halant(्)</h5>
-          Halant is used in most writing system to signify the lack of inherent vowel.
+          Halant is used in most writing systems to signify the lack of inherent vowel.
           It is also called virama by Unicode.
           </section>
           
           <section id="h_hindi_nukta">
           <h5>Nukta(़) </h5>
-          Nukta is used in Hindi
+          Nukta is used in Hindi.
           <p class="note"> For more information See [[!Draft-Script-Grammar]] </p>
           </section>
     </section>
@@ -481,7 +480,7 @@
   </section>
     </section>
 <section id="h_indic_orthographic_syllable_boundaries">
-      <h2>Indic orthographic syllable boundaries(ABNF Valid segmentation-Proposed solution for layout issues in Indian languages)</h2>
+      <h2>Indic orthographic syllable boundaries (ABNF Valid segmentation-Proposed solution for layout issues in Indian languages)</h2>
     
       <section id="h_need_for_abnf_valid_segmentation">
     <h3>Need for ABNF valid segmentation</h3>
@@ -516,7 +515,7 @@
     
     
       <section id="h_abnf_syllabe_definition_use_cases_hindi">
-    <h3>Various Use cases of ABNF based Indic orthographic syllable definition for Indian languages</h3>
+    <h3>Various example use cases of ABNF based Indic orthographic syllable definition for Indian languages</h3>
     <p><strong>Rule 1 : V[m]</strong></p>
     <div>
           <table  class="tab-format">
@@ -566,7 +565,7 @@
           <tr>
            <td width="174" valign="top"><p>Manipuri</p></td>
            <td width="319" valign="top"><p>অ, ই, উ</p></td>
-           <td width="277" valign="top"><p>ওঁ, অং (হোয়)</p></td>
+           <td width="277" valign="top"><p>ওঁ, অং (হোয়)</p></td>
          </tr>
          <tr>
            <td width="174" valign="top"><p>Kashmiri</p></td>
