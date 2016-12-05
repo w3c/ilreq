@@ -327,7 +327,7 @@
     </section>
     <section id="h_unicode_code_charts_devanagari">
           <h4>Unicode Code charts- Devanagari &amp; Devanagari Extended</h4>
-          <p>The following Unicode Character Code chart as per The Unicode Standard, Version 7.0 :</p>
+          <p>The following Unicode Character Code chart as per The Unicode Standard, Version 9.0 :</p>
         <figure> <img src="images/code-chart.jpg" width="549" height="777" alt="Devanagari and Devanagari extended Code Chart" />
               <figcaption>Unicode Devanagari and Devanagari extended Code Chart</figcaption>
             </figure>
@@ -502,7 +502,7 @@
     <br />
     m is modifier(Anusvara/Visarga/Chandrabindu)<br />
     <br />
-    C is a consonant which may or may not include a single nukta <br />
+    C is a consonant with inherent vowel which may or may not include a single nukta <br />
     <br />
     v (lower case) is any dependent vowel or vowel sign (mātrā)<br />
     <br />
@@ -613,7 +613,7 @@
          </tr>
 		  
 		  <tr>
-           <td width="174" valign="top"><p>Santali</p></td>
+           <td width="174" valign="top"><p>Santhali</p></td>
            <td width="319" valign="top"><p>अ, ई, उ</p></td>
            <td width="277" valign="top"><p>अं, उँ, आः</p></td>
          </tr>
@@ -801,7 +801,7 @@
         </tr>
 		  
 		  <tr>
-          <td width="84" height="36" valign="top"><p>Santali</p></td>
+          <td width="84" height="36" valign="top"><p>Santhali</p></td>
           <td width="99" valign="top"><p align="center">र, क, ज, ल, म</p></td>
           <td width="98" valign="top"><p align="center">NA</p></td>
           <td width="150" valign="top"><p align="center">NA</p></td>
@@ -885,7 +885,7 @@
         </tr>
 	       
 	        <tr>
-          <td width="174" valign="top"><p>Santali</p></td>
+          <td width="174" valign="top"><p>Santhali</p></td>
           <td width="596" valign="top"><p>NA</p></td>
         </tr>
       </table>
@@ -897,14 +897,16 @@
     </section>
 
   
+<section id="h_requirements_for_indic_layout">
+      <h2>Requirements for Indic Layout	</h2>
 <section id="h_text_segmentation">
   <h2>Text segmentation</h2>
       <p>A string of Unicode-encoded text often needs to be broken up into text elements programmatically. Common examples of text elements include what users think of as characters, words, lines (more precisely, where line breaks are allowed), and sentences. The precise determination of text elements may vary according to orthographic conventions for a given script or language. The goal of matching user perceptions cannot always be met exactly because the text alone does not always contain enough information to unambiguously decide boundaries. For example, the period (U+002E FULL STOP) is used ambiguously, sometimes for end-of-sentence purposes, sometimes for abbreviations, and sometimes for numbers. In most cases, however, programmatic text boundaries can match user perceptions quite closely, although sometimes the best that can be done is not to surprise the user. Word boundaries are used in a number of different contexts. The most familiar ones are selection (double-click mouse selection, or “move to next word” control-arrow keys), and “Whole Word Search” for search and replace. They are also used in database queries, to determine whether elements are within a certain number of words of one another .
-    Some special sentence boundaries like the double poorna virama, possibly with numbers (as in Sanskrit text, shlokas etc.) Grapheme cluster boundaries are   	important for collation, regular expressions, UI   	interactions (such as mouse selection, arrow key movement, backspacing),   	segmentation for vertical text, identification of boundaries for   	Initial-letter styling, and counting “character” positions within text. [[!UAX29]]</p>
+    Grapheme cluster boundaries are   	important for collation, regular expressions, UI   	interactions (such as mouse selection, arrow key movement, backspacing),   	segmentation for vertical text, identification of boundaries for   	Initial-letter styling, and counting “character” positions within text. [[!UAX29]]</p>
       <p>Solution for word boundaries:<br />
     User-percieved characters boundaries  should be based on tailored Grapheme Cluster Boundaries to conform Indic orthographic syllable definition <br />
   </p>
-      <p>In case of Devanagari phrase separator called Danda or purnaviram (।) and double danda (।।: used to mark end of the verse),In some of the browsers ending word is selected with purnaviram on double-click while in some browsers Danda is selected as a separate. It is recommended that  line should not  begin with purnaviram/Danda and double danda. So the properties of Danda should be same as the properties of FullStop or other punctuation marks so that new line should not begin with Danda and double danda.</p>
+      <p>In case of Devanagari phrase separator called Danda or purna viram (U+0964 DEVANAGARI DANDA ।) and double danda or deergh viram(U+0965 DEVANAGARI DOUBLE DANDA ॥ : used to mark end of the verse as in Sanskrit text, shlokas etc.),In some of the browsers ending word is selected with purnaviram on double-click while in some browsers Danda is selected as a separate. It is recommended that  line should not  begin with Danda and double danda. So the properties of Danda should be same as the properties of FullStop or other punctuation marks so that new line should not begin with Danda and double danda.</p>
       <p>For others characters, the text segmentation should be done as Indic orthographic syllable.</p>
       <p>Indic script behavior in initial letter styling is based on syllables, rather than individual letter forms.</p> 
       <img src="images/drop-letter1.jpg" alt="example of drop letter"/>
@@ -931,33 +933,129 @@
     <h3>Hyphenation</h3>
     <p> There are different cases of hyphenation, some of the cases are given below :</p>
     <p><b>Case 1 :</b> Hyphens are commonly used in Copulative compounds words in Hindi language. Hindi has both prefixes and suffixes which are joined to words with a hyphen.</p>
-        <p>नर- नारी, लाभ- हानि, माता-पिता, ऊंच - नीच</p>
-    <p><b>Case 2:</b> Single word can breaks at the end of the line at Indic orthographic syllable level using hyphen </p>
-    <p>In the below screenshot, words आकर्षण and विज्ञापन not follow Indic orthographic syllable definition in some of the browsers.</p>
+        <p>नर-नारी, लाभ-हानि, माता-पिता, ऊंच-नीच</p>
+    Case 2:Single word can breaks at the end of the line follow Indic orthographic syllable using hyphen.Following example shows correct representation of word आकर्षण and विज्ञापन using hyphen :
     <br />
-    <img src="images/hyphen.jpg" width="537" height="227" alt="Example of Line breaking" /> </section>
+    <img src="images/untitled.jpg" width="537" height="227" alt="Example of Line breaking" /> </section>
     
     
       <section id="h_guiding_principles_line_breaking_indian_languages">
     <h3>Guiding principles of Line breaking for Indian languages</h3>
     <p>In Indic writing system , it is preferred that line breaks at word boundaries ,if required following principles may be adhered :</p>
     <p><b>Rule 1:</b> New line cannot begin with following symbols/Punctuation marks. Also these should be retain with the associated text</p>
-    <ul>
-          <li>Closing brackets</li>
-          <li>Devanagari Danda /Purnaviram</li>
-          <li>Commas </li>
-          <li>Visarga</li>
-          <li>Decimal symbols</li>
-          <li>Semicolon</li>
-          <li>Repetition of punctuation marks such as semicolon with closing brackets, Semicolon with single/ Double quotes , Closing brackets with commas/Semicolon etc</li>
-          <li>Mathematical operators</li>
-        </ul>
-    <p><b>Rule 2: </b>The definition of Indic orthographic syllable may be used to break the line and a hyphen should be at the breaking point so that word can be read intuitively</p>
+    <table  class="tab-format">
+      <tr>
+        <td width="68" valign="top"><p><strong>Symbols</strong> </p></td>
+        <td width="277" valign="top"><p><strong>Character name</strong> </p></td>
+        <td width="236" valign="top"><p><strong>Unicode code-point</strong> </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>। </p></td>
+        <td width="277" valign="top"><p>DEVANAGARI DANDA </p></td>
+        <td width="236" valign="top"><p>U + 0964 </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>॥ </p></td>
+        <td width="277" valign="top"><p>DEVANAGARI DOUBLE DANDA </p></td>
+        <td width="236" valign="top"><p>U + 0965 </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>) </p></td>
+        <td width="277" valign="top"><p>RIGHT PARENTHESIS </p></td>
+        <td width="236" valign="top"><p>U + 0029 </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>+ </p></td>
+        <td width="277" valign="top"><p>PLUS SIGN </p></td>
+        <td width="236" valign="top"><p>U + 002B </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>* </p></td>
+        <td width="277" valign="top"><p>ASTERISK </p></td>
+        <td width="236" valign="top"><p>U + 002A </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>- </p></td>
+        <td width="277" valign="top"><p>HYPHENATIONPOINT-VISIBLE HYPHEN<br>
+          HYPHENATION-SOFT HYPHEN </p></td>
+        <td width="236" valign="top"><p>U + 2027<br>
+          U+ 00AD </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>/ </p></td>
+        <td width="277" valign="top"><p>SOLIDUS </p></td>
+        <td width="236" valign="top"><p>U + 002F </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>, </p></td>
+        <td width="277" valign="top"><p>COMMA </p></td>
+        <td width="236" valign="top"><p>U + 002C </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>. </p></td>
+        <td width="277" valign="top"><p>FULL STOP </p></td>
+        <td width="236" valign="top"><p>U + 002E </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>: </p></td>
+        <td width="277" valign="top"><p>COLON </p></td>
+        <td width="236" valign="top"><p>U + 003A </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>; </p></td>
+        <td width="277" valign="top"><p>SEMICOLON </p></td>
+        <td width="236" valign="top"><p>U + 003B </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>= </p></td>
+        <td width="277" valign="top"><p>EQUALS SIGN </p></td>
+        <td width="236" valign="top"><p>U + 003D </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>&gt;&nbsp; </p></td>
+        <td width="277" valign="top"><p>GREATER-THAN SIGN </p></td>
+        <td width="236" valign="top"><p>U + 003E </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>] </p></td>
+        <td width="277" valign="top"><p>RIGHT SQUARE BRACKET </p></td>
+        <td width="236" valign="top"><p>U + 005D </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>_ </p></td>
+        <td width="277" valign="top"><p>LOW LINE </p></td>
+        <td width="236" valign="top"><p>U + 005F </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>| </p></td>
+        <td width="277" valign="top"><p>VERTICAL LINE </p></td>
+        <td width="236" valign="top"><p>U + 007C </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>} </p></td>
+        <td width="277" valign="top"><p>RIGHT CURLY BRACKET </p></td>
+        <td width="236" valign="top"><p>U + 007D </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>~ </p></td>
+        <td width="277" valign="top"><p>TILDE </p></td>
+        <td width="236" valign="top"><p>U + 007E </p></td>
+      </tr>
+      <tr>
+        <td width="68" valign="top"><p>% </p></td>
+        <td width="277" valign="top"><p>PERCENT SIGN </p></td>
+        <td width="236" valign="top"><p>U + 0025 </p></td>
+      </tr>
+    </table>
+    Rule 2: The definition of Indic orthographic syllable may be used to break the line and a hyphen should be at the breaking point so that word can be read intuitively
+
+However the language specific morpho-phonemic rules and industry practices (from media, publishing and grammar books) could be used for hyphenation. U+ 00AD (soft hyphen) is used in some languages such as Tamil and Malayalam.
     <p><b>Rule 3: </b>The hyphenated words can be broken at the hyphen e.g.:</p>
     <ul>
           <li>नर-नारी should be treated as:</li>
           <li>नर- on the first line and नारी on the next line</li>
         </ul>
+	      <p><img src="images/hyphen1.jpg" alt="hyphenation example at line breaking" width="793" height="377" /></p>
     <p><b>Rule 4:</b> Expression with mathematical symbol should be treated as single unit so that at the end of the line expression should not breaks at operator level</p>
     <p><b>Rule 5:</b> Breaking should not be allowed at numerical values such as currency values, year etc. e.g.</p>
     <p>“100.00” or “10,000”, nor in “12:59”</p>
@@ -1065,23 +1163,21 @@ The part from the hanging baseline and the ascent of the Initial letter may foll
         </figure>
         </section>
         
-     <section id="h_vertical_representation_of_word">  
-    <h4>Vertical representation of the word 'स्वागतम्' based on Indic orthographic syllable definition:</h4>
+      <h4>Given below the example 'स्वागतम्' that follows  rule 2 and rule 3 of Indic orthographic syllable definition:</h4>
     <table class="tab-format">
           <tr>
-        <td><strong>स्वा</strong></td>
+        <td><strong>स्वा</strong></td> <td><strong>CHCv- Rule 2</strong></td>
       </tr>
           <tr>
-        <td><strong>ग</strong></td>
+        <td><strong>ग</strong></td><td><strong>C - Rule 2</strong></td>
       </tr>
           <tr>
-        <td><strong>त</strong></td>
+        <td><strong>त</strong></td><td><strong>C - Rule 2</strong></td> 
       </tr>
           <tr>
-        <td><strong>म्</strong></td>
+        <td><strong>म्</strong></td><td><strong>CH - Rule 3</strong></td>
       </tr>
         </table>
-        </section>
   </section>
   
   
