@@ -8,7 +8,7 @@
 Please use the [GitHub issue list](https://github.com/w3c/ilreq/issues) to send feedback about this document.
 
 ###Following
-To follow the work, you can 'Watch' this repository using the control above, or subscribe to the [public-i18n-indic](https://lists.w3.org/Archives/Public/public-i18n-indic/) mailing list, which is notified once a day about changes to the repo. (Please use github issues rather than the mailing list to send feedback.) The [www-international](https://lists.w3.org/Archives/Public/www-international/) list is also notified daily.
+To follow the work, you can 'Watch' this repository using the control above, or subscribe to the [public-i18n-indic](https://lists.w3.org/Archives/Public/public-i18n-indic/) mailing list, which is notified once a day about changes to the repo. The [www-international](https://lists.w3.org/Archives/Public/www-international/) list is also notified daily. (Please use github issues rather than the mailing list to send feedback.) Meeting minutes are sent to public-i18n-indic.
 
 ###Contributing
 
@@ -23,5 +23,5 @@ Editors should be familiar with and use the following:
 
 
 ###Links
-- [Home page](http://www.w3.org/International/groups/indic-layout/)
+- [Task Force Home page](http://www.w3.org/International/groups/indic-layout/)
 - [Charter](https://www.w3.org/2012/07/indic-tf-charter/charter.html)
