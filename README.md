@@ -2,7 +2,7 @@
 
 ###Documents
 - [Editor's copy](https://w3c.github.io/ilreq/)
-- [/TR](https://www.w3.org/TR/ilreq/)
+- [WD](https://www.w3.org/TR/ilreq/)
 
 ###Feedback
 Please use the [GitHub issue list](https://github.com/w3c/ilreq/issues) to send feedback about this document.
