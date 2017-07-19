@@ -25,3 +25,4 @@ Editors should be familiar with and use the following:
 ### Links
 - [Task Force Home page](http://www.w3.org/International/groups/indic-layout/)
 - [Charter](https://www.w3.org/2012/07/indic-tf-charter/charter.html)
+- [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html)
