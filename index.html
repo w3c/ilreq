@@ -821,19 +821,23 @@
   <h2>Text segmentation</h2>
       <p>A string of Unicode-encoded text often needs to be broken up into text elements programmatically. Common examples of text elements include what users think of as characters, words, lines (more precisely, where line breaks are allowed), and sentences. The precise determination of text elements may vary according to orthographic conventions for a given script or language. The goal of matching user perceptions cannot always be met exactly because the text alone does not always contain enough information to unambiguously decide boundaries. For example, the period (U+002E FULL STOP) is used ambiguously, sometimes for end-of-sentence purposes, sometimes for abbreviations, and sometimes for numbers. In most cases, however, programmatic text boundaries can match user perceptions quite closely, although sometimes the best that can be done is not to surprise the user. Word boundaries are used in a number of different contexts. The most familiar ones are selection (double-click mouse selection, or “move to next word” control-arrow keys), and “Whole Word Search” for search and replace. They are also used in database queries, to determine whether elements are within a certain number of words of one another .
     Grapheme cluster boundaries are   	important for collation, regular expressions, UI   	interactions (such as mouse selection, arrow key movement, backspacing),   	segmentation for vertical text, identification of boundaries for   	Initial-letter styling, and counting “character” positions within text. [[!UAX29]]</p>
-      <p>Solution for word boundaries:<br />
+      <section>
+	  <h3>Word Boundaries</h3>
+	<p>Solution for word boundaries:<br />
     User-percieved characters boundaries  should be based on tailored Grapheme Cluster Boundaries to conform Indic orthographic syllable definition <br />
   </p>
       <p>In case of Devanagari phrase separator called purna viram (। , U+0964  ) and deergh viram( ॥ , U+0965 ) used to mark end of the verse as in Sanskrit text, shlokas etc.),In some of the browsers ending word is selected with purnaviram on double-click while in some browsers purna viram is selected as a separate.So the properties of purna viram and deergh viram should be same as the properties of FullStop or other punctuation marks so that new line should not begin with purna viram and deergh viram.</p>
-      <p>For others characters, the text segmentation should be done as Indic orthographic syllable.</p>
-      <p>Indic script behavior in initial letter styling is based on syllables, rather than individual letter forms.</p> 
+      <p>For others characters, the text segmentation should be done as Indic orthographic syllable.</p></section>
+      <section>
+	<h3>Typographic units </h3>
+	      <p>Indic script behavior in initial letter styling is based on syllables, rather than individual letter forms.</p> 
       <img src="images/drop-letter1.jpg" alt="example of drop letter"/>
 
 <p>The above Figure  shows an example of a drop intial in Hindi. In the first word of the paragraph, स्कूल ('skūl'), the sequence of characters is stored in memory is as follows:</p>
 <img src="images/initial-letter-ex.jpg" alt="initial letter example" />
 <p>There are two syllables in this word: SA+VIRAMA+KA+UU and LA.  Note, however, that there are three Unicode grapheme clusters here: SA+VIRAMA, KA+UU and LA.</p>
 <p>Styling is done on the basis of the whole orthographic syllable, not the first character, nor even the first grapheme. </p>
-
+	</section>
     </section>
     
     
