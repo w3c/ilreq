@@ -96,11 +96,15 @@
       };
     </script>
 	<link rel="stylesheet" href="local.css" type="text/css" />
+   <style>
+	   .centredTable td { text-align: center; vertical-align: top; font-size: 140%; line-height: 1; border: 0; }
+	   .centredTable th { text-align: center; vertical-align: top; font-size: 80%; line-height: 1; }
+		</style>
     </head>
-    <body id="respecDocument" role="document" class="h-entry">
+<body id="respecDocument" role="document" class="h-entry">
 <div id="abstract">
       <p>This document describes the basic requirements for Indic script layout and text support on the Web and in Digital Publications. These requirements provide information for Web technologies such as CSS, HTML, and SVG about how to support users of Indic scripts. The current document focuses on Devanagari, but there are plans to widen the scope to encompass additional Indian scripts as time goes on.</p>
-  </div>
+</div>
 <div id="sotd">
       <p>This document describes the basic requirements for Indic script layout and text support on the Web and in eBooks. These requirements provide information for Web technologies such as CSS, HTML and SVG about how to support users of Indic scripts.  The current document focuses on Devanagari, but there are plans to widen the scope to encompass additional Indian scripts as time goes on. </p>
       <p>The editor's draft of this document is being developed by the <a href="https://www.w3.org/International/groups/indic-layout/">Indic Layout Task Force</a>, part of the W3C <a href="https://www.w3.org/International/ig/">Internationalization Interest Group</a>. It is published by the <a href="https://www.w3.org/International/core/">Internationalization Working Group</a>. The end target for this document is a Working Group Note.</p>
@@ -109,7 +113,7 @@
   	<p data-lang="en">If you wish to make comments regarding this document, please raise them as <a href="https://github.com/w3c/ilreq/issues" style="font-size: 120%;">github issues</a>. Only send comments by email if you are unable to raise issues on github (see links below).   All comments are welcome.</p>
   	<p data-lang="en">To make it easier to track comments, please raise separate issues or emails for each comment, and point to the section you are commenting on&nbsp; using  a URL for the dated version of the document.</p>
     </div>
-    </div>
+</div>
     
     
 <section id="h_introduction">
@@ -293,7 +297,7 @@
         <p><a href="#fig_canonical_equivalence"></a> shows the canonical equivalence:</p>
         <figure id="fig_canonical_equivalence"> <img src="images/can-eq.jpg" width="547" height="83" alt="Canonical equivalence in Hindi" />
               <figcaption>Canonical Equivalence</figcaption>
-            </figure>
+        </figure>
       </section>
       
     </section>
@@ -310,7 +314,7 @@
         
         
   </section>
-    </section>
+</section>
 <section id="h_indic_orthographic_syllable_boundaries">
       <h2>Indic orthographic syllable boundaries</h2>
     
@@ -812,7 +816,7 @@
   </section>
   
 
-    </section>
+</section>
 
   
 
@@ -837,7 +841,7 @@
 <p>There are two syllables in this word: SA+VIRAMA+KA+UU and LA.  Note, however, that there are three Unicode grapheme clusters here: SA+VIRAMA, KA+UU and LA.</p>
 <p>Styling is done on the basis of the whole orthographic syllable, not the first character, nor even the first grapheme. </p>
 	</section>
-    </section>
+</section>
     
     
 <section id="h_line_breaking">
@@ -976,7 +980,7 @@ However the language specific morpho-phonemic rules and industry practices (from
     <p><b>Rule 5:</b> Breaking should not be allowed at numerical values such as currency values, year etc. e.g.</p>
     <p>“100.00” or “10,000”, nor in “12:59”</p>
   </section>
-    </section>
+</section>
     
     
     	
@@ -1020,7 +1024,7 @@ However the language specific morpho-phonemic rules and industry practices (from
 The part from the hanging baseline and the ascent of the Initial letter may follow the following mechanism, where n = h/2:</p>
  <figure><img src="images/Hbaseline-rule.png" alt="Rule for hanging baseline">
           <figcaption>Rule of  Indic script  with hanging baseline</figcaption>
-        </figure>
+    </figure>
  <p>In Indic scripts that have a hanging baseline, the top alignment point is the hanging baseline, and the bottom alignment point is the text-after-edge, and the hanging baselines of both the initial letter and first line of text should be  aligned.</p>
       </section>
       
@@ -1068,40 +1072,49 @@ The part from the hanging baseline and the ascent of the Initial letter may foll
     </section>
     
     
-      <section id="h_vertical_arrangements_of_characters">
+<section id="h_vertical_arrangements_of_characters">
     <h3>Vertical arrangements of characters</h3>
-    <p>In vertical arrangement of characters writing each character on a new line may not be suitable in Indian languages. The vertical arrangements of characters are sometimes used in Indian texts. In order to form correct arrangements, it is preferred to follow tailored grapheme cluster approach.
-          Variations of vertical arrangement of the characters in Hindi is represent below :</p>
-          
-     <section id="h_variations_in_vertical_arrangements">
-    <h4>Variations in vertical arrangements</h4>
-    <figure> <img src="images/vert2.png" width="608" height="250" alt="Example of Vertical arrangements in Hindi" />
-          <figcaption>Variations in vertical arrangements</figcaption>
-        </figure> The above example shows two variation of the word in order to differentiate the correct and wrong representation of the word. The segmentation of the vertical arrangements should follow the Indic syllabic definition.Given below the example 'स्वागतम्' that follows  rule 2 and rule 3 of Indic orthographic syllable definition:
-         <table class="tab-format">
-          <tr>
+    <p> Vertical arrangements of characters are sometimes used in Indian texts. Rather than writing each character on a new line, line-breaks should normally leave orthographic syllables intact.</p>
+  <figure> 
+    <table class="centredTable">
+       <thead>
+		   <tr><th>✔️</th><th>❌</th><th>&nbsp;</th><th>✔️</th><th>❌</th></tr>
+      </thead>
+       <tbody>
+		   <tr>
+		     <td>व<br/>क्ता</td> 
+		     <td>व<br/>क्<br/>ता</td> 
+		     <td style="width: 3em;">&nbsp;</td>
+		     <td>श<br/>क्ति</td>
+		     <td>श<br/>क्<br/>ति</td>
+		   </tr>
+      </tbody></table>
+       <figcaption>Vertical alignment based on orthographic syllable boundaries.</figcaption>
+  </figure> 
+  The segmentation of the vertical arrangements should follow the Indic syllable definition. The example 'स्वागतम्' below follows  rule 2 and rule 3 of Indic orthographic syllable definition:
+   <figure>
+    <table class="centredTable">
+      <tr>
         <td><strong>स्वा</strong></td> <td><strong>CHCv- Rule 2</strong></td>
       </tr>
-          <tr>
+      <tr>
         <td><strong>ग</strong></td><td><strong>C - Rule 2</strong></td>
       </tr>
-          <tr>
+      <tr>
         <td><strong>त</strong></td><td><strong>C - Rule 2</strong></td> 
       </tr>
-          <tr>
+      <tr>
         <td><strong>म्</strong></td><td><strong>CH - Rule 3</strong></td>
       </tr>
-        </table>
-	      </section>
+  </table>
+	   <figcaption>Segmentation of vertically-set text using Indic syllable rules.</figcaption>
+  </figure>
+  
         
       
-   
-  </section>
-  
-  
-  
-      <section id="h_collation">
-    <h3>Collation</h3>
+</section>
+<section id="h_collation">
+  <h3>Collation</h3>
     <p>Collation is one of the most important features for Indic languages . It determines the order in which a given culture indexes its characters. This is best seen in a dictionary sorting order where for easy search words are sorted and arranged in a specific order. Within a given script, each allo-script may have a different sort-order. Thus in Hindi the conjunct glyph क्ष is sorted along with क , since the first letter of that conjunct is क and on a similar principle ज्ञ is sorted along with ज . The same is not the case with Marathi and Nepali which admit a different sort order.</p>
     <p>Different scripts admit different sort orders and for all high
           end NLP applications. Sorting is
@@ -1307,7 +1320,7 @@ The part from the hanging baseline and the ascent of the Initial letter may foll
               <td>&nbsp;</td>
             </tr>
       </table>
-  </section>
+</section>
     </section>
     
     
@@ -1487,7 +1500,7 @@ The part from the hanging baseline and the ascent of the Initial letter may foll
         <td>Sanat Hansda</td>
         <td>Visva-Bharati University, Santiniketan, W.B</td>
       </tr>
-        </table></section>
+  </table></section>
 
 <section class="appendix" id="app-b">
   <h2> Revision Log</h2>
