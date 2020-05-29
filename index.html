@@ -98,7 +98,7 @@
     </script>
 	<link rel="stylesheet" href="local.css" type="text/css" />
     </head>
-    <body id="respecDocument" role="document" class="h-entry">
+    <body>
 <div id="abstract">
       <p>This document describes the basic requirements for Indic script layout and text support on the Web and in Digital Publications. These requirements provide information for Web technologies such as CSS, HTML, and SVG about how to support users of Indic scripts. The current document focuses on Devanagari, but there are plans to widen the scope to encompass additional Indian scripts as time goes on.</p>
   </div>
@@ -401,9 +401,9 @@
            <td><p>ওঁ, অং (হোয়)</p></td>
          </tr>
          <tr>
-           <td width="174" valign="top"><p>Kashmiri language of Devanagari script</p></td>
-           <td width="319" valign="top"><p>अ , ऑ ,ऒ ,ऎ </p></td>
-           <td width="277" valign="top"><p>अँ</p></td>
+           <td><p>Kashmiri language of Devanagari script</p></td>
+           <td><p>अ , ऑ ,ऒ ,ऎ </p></td>
+           <td><p>अँ</p></td>
          </tr>
          <tr>
            <td><p>Maithili</p></td>
@@ -456,20 +456,20 @@
            <td><p>અં, અઃ</p></td>
          </tr>
 		  <tr>
-           <td width="174" valign="top"><p>Konkani</p></td>
-           <td width="319" valign="top"><p>अ, ई, उ</p></td>
-           <td width="277" valign="top"><p>अं</p></td>
+           <td><p>Konkani</p></td>
+           <td><p>अ, ई, उ</p></td>
+           <td><p>अं</p></td>
          </tr>
 		  <tr>
-           <td width="174" valign="top"><p>Bodo</p></td>
-           <td width="319" valign="top"><p>आ , ओ , ए , उ</p></td>
-           <td width="277" valign="top"><p>ऐं , ऒं</td>
+           <td><p>Bodo</p></td>
+           <td><p>आ , ओ , ए , उ</p></td>
+           <td><p>ऐं , ऒं</p></td>
          </tr>
 		  
 		  <tr>
-           <td width="174" valign="top"><p>Sindhi language of Devanagari script</p></td>
-           <td width="319" valign="top"><p>अ , ऊ , ई , ऐ</p></td>
-           <td width="277" valign="top"><p>ओं ,  एं , उं</td>
+           <td><p>Sindhi language of Devanagari script</p></td>
+           <td><p>अ , ऊ , ई , ऐ</p></td>
+           <td><p>ओं ,  एं , उं</p></td>
          </tr>
        </table>
           <p><b>Rule 2 : {CH}C[v][m]</b></p>
@@ -797,16 +797,16 @@
           <td><p>આત્મસાત્</p></td>
         </tr>
 	        <tr>
-          <td width="174" valign="top"><p>Konkani</p></td>
-          <td width="596" valign="top"><p>NA</p></td>
+          <td><p>Konkani</p></td>
+          <td><p>NA</p></td>
         </tr>
 	       <tr>
-          <td width="174" valign="top"><p>Bodo</p></td>
-          <td width="596" valign="top"><p>NA</p></td>
+          <td><p>Bodo</p></td>
+          <td><p>NA</p></td>
         </tr>
 	       <tr>
-          <td width="174" valign="top"><p>Sindhi language of Devanagari script</p></td>
-          <td width="596" valign="top"><p>NA</p></td>
+          <td><p>Sindhi language of Devanagari script</p></td>
+          <td><p>NA</p></td>
         </tr>
       </table>
         </div>
@@ -1000,7 +1000,7 @@ However the language specific morpho-phonemic rules and industry practices (from
       <figure> <img src="images/dropcap-example2.png" alt="examples of indic initial letters" /> 
           <figcaption>Examples of Indic Initial letters</figcaption>
         </figure>
-   <p>The <a href="https://www.w3.org/TR/dpub-latinreq/#raised-caps-and-sunken-caps">sunken and raised</a> initial letter are not preferred in Indian languages. In the above examples , reference points on the drop cap must align precisely with reference points in the text. .In Indic scripts the top reference point is the hanging base line for those scripts that have one, and the mean/median line for those that don't, and the bottom alignment point is the text after-edge
+   <p>The <a href="https://www.w3.org/TR/dpub-latinreq/#raised-caps-and-sunken-caps">sunken and raised</a> initial letter are not preferred in Indian languages. In the above examples , reference points on the drop cap must align precisely with reference points in the text. .In Indic scripts the top reference point is the hanging base line for those scripts that have one, and the mean/median line for those that don't, and the bottom alignment point is the text after-edge</p>
     <p><a href="https://www.w3.org/TR/css-inline-3/#initial-letter-wrapping">Initial letter wrap property</a> is not applicable for Indian languages. No <a href="https://www.w3.org/TR/css-inline-3/#initial-letter-wrapping">contour-filling</a> is required in Indian languages.</p>
     <p>Alignment of the top line of the non-highlighted characters  at the top of the thicker top line of the initial letter is common in India. In some examples the top lines of the initial letter and the following letters don't touch. This is due to variable technology/formats used by the publishers. It is preferred that both the top lines of Initial letter and neighbouring text should touch.</p>
     <p>Here are some additional  examples of initial highlighted letter and drop letter based on the Indic syllable definition.</p>
@@ -1066,6 +1066,7 @@ The part from the hanging baseline and the ascent of the Initial letter may foll
     </ol>
 	      Here is the example of the name plate of the Museum. The top bar is broken in letter spacing and the space letter is added between orthographic syllable.
 	<figure> <img  src="images/letter-spacing-ex.png" alt="examples of letter spacing" width="981"/> 
+	</figure>
     </section>
     
     
@@ -1309,7 +1310,6 @@ The part from the hanging baseline and the ascent of the Initial letter may foll
             </tr>
       </table>
   </section>
-    </section>
     
     
 <section class="appendix" id="app-a">
